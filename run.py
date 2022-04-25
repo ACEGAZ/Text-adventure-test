@@ -239,14 +239,34 @@ def start_menu():
         time.sleep(2)
         story()
     elif race in answer_C:
+        global RACE_THREE
+        RACE_THREE = "Bascula"
+        time.sleep(2)
+        story()
         print(f"you have chosen a {RACE_THREE} called {character_name}")
     elif race in answer_D:
+        global RACE_FOUR
+        RACE_THREE = "Hemmel"
+        time.sleep(2)
+        story()
         print(f"you have chosen a {RACE_FOUR} called {character_name}")
     elif race in answer_E:
+        global RACE_FIVE
+        RACE_THREE = "Human"
+        time.sleep(2)
+        story()
         print(f"you have chosen a {RACE_FIVE} called {character_name}")
     elif race in answer_F:
+        global RACE_SIX
+        RACE_THREE = "Arratoi"
+        time.sleep(2)
+        story()
         print(f"you have chosen a {RACE_SIX} called {character_name}")
     elif race in answer_G:
+        global RACE_SEVEN
+        RACE_THREE = "Fulger"
+        time.sleep(2)
+        story()
         print(f"you have chosen a {RACE_SEVEN} called {character_name}")
     else:
         print("Please enter a valid Race choice. ")
@@ -287,7 +307,17 @@ def story():
         vahser_option_1()
     elif RACE_TWO and choice in answer_D:
         mortem_option_1()
- 
+    elif RACE_THREE and choice in answer_D:
+        bascula_option_1()
+    elif RACE_FOUR and choice in answer_D:
+        hemmel_option_1()
+    elif RACE_FIVE and choice in answer_D:
+        human_option_1()
+    elif RACE_SIX and choice in answer_D:
+        Arratoi_option_1()
+    elif RACE_SEVEN and choice in answer_D:
+        fulger_option_1()
+
 
 def option_punch():
     print("You punch that sailor square in his face and knock out his last tooth!"
@@ -314,6 +344,26 @@ def vahser_option_1():
 def mortem_option_1():
     print("you are a Mortem")
 
+
+def bascula_option_1():
+    print("you are a Bascula")
+
+
+def hemmel_option_1():
+    print("you are a Hemmel")
+
+
+def human_option_1():
+    print("you are a Human")
+
+
+def Arratoi_option_1():
+    print("you are a Arratoi")
+
+
+def fulger_option_1():
+    print("you are a Fulger")
+   
 
 start_menu()
 
