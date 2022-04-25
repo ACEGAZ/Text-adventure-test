@@ -246,25 +246,25 @@ def start_menu():
         story()
     elif race in answer_D:
         global RACE_FOUR
-        RACE_THREE = "Hemmel"
+        RACE_FOUR = "Hemmel"
         print(f"you have chosen a {RACE_FOUR} called {character_name}")
         time.sleep(2)
         story()
     elif race in answer_E:
         global RACE_FIVE
-        RACE_THREE = "Human"
+        RACE_FIVE = "Human"
         print(f"you have chosen a {RACE_FIVE} called {character_name}")
         time.sleep(2)
         story()
     elif race in answer_F:
         global RACE_SIX
-        RACE_THREE = "Arratoi"
+        RACE_SIX = "Arratoi"
         print(f"you have chosen a {RACE_SIX} called {character_name}")
         time.sleep(2)
         story()
     elif race in answer_G:
         global RACE_SEVEN
-        RACE_THREE = "Fulger"
+        RACE_SEVEN = "Fulger"
         print(f"you have chosen a {RACE_SEVEN} called {character_name}")
         time.sleep(2)
         story()
