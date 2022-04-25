@@ -15,14 +15,12 @@ no = ["N", "n", "no"]
 # race choice for player
 RACE_ONE = False
 RACE_TWO = False
-RACE_TWO = False
 RACE_THREE = False
 RACE_FOUR = False
 RACE_FIVE = False
 RACE_SIX = False
 RACE_SEVEN = False
 
-print(bool(RACE_ONE))
 PLAYER_HEALTH = 10
 ENEMY_HEALTH = 6
 
@@ -201,7 +199,7 @@ def combat_encounter():
             print("You Died!")
             time.sleep(2)
             start_menu()
- 
+
 
 def start_menu():
     """
@@ -212,7 +210,7 @@ def start_menu():
     "You will be given 3 choices or a yes or no question\n"
     "Your choice will change the story as it plays.\n"
     "You will be given a choice of race which will change certian aspects of the game.\n"
-    "Have fun!!!") 
+    "Have fun!!!")
     race = input("choose your race...\n"
                  "A Vahser\n"
                  "B Mortem\n"
@@ -275,7 +273,6 @@ def start_menu():
         
 
 def story():
-    
     """
     function to start vahser playthrough
     """ 
