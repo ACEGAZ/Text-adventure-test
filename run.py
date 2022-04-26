@@ -92,11 +92,12 @@ def player_magic_roll():
 def player_magic_combat():
     """
     player magic combat engine for game
-    """ 
+    """
 
     if player_magic_roll() >= 5:
         reduce_enemy_health_magic()
-        print(f"You hit with magic attack!, enemy has {ENEMY_HEALTH} hit points left""\n")
+        print(f"You hit with magic attack!, enemy has {ENEMY_HEALTH} hit"
+              "points left""\n")
     else:
         print("You hurl magical energy at the enemy but miss\n")
 
@@ -119,7 +120,8 @@ def enemy_melee_combat():
     time.sleep(2)
     if enemy_attack_roll() >= 4:
         reduce_player_health_melee()
-        print(f"The enemy hit you with a melee attack! You have {PLAYER_HEALTH} hit points left""\n")
+        print("The enemy hit you with a melee attack!"
+              f"You have {PLAYER_HEALTH} hit points left""\n")
         time.sleep(2)
     else:
         print("The enemy missed you with its melee attack\n")
@@ -138,17 +140,18 @@ def enemy_magic_roll():
 def enemy_magic_combat():
     """
     computer magic combat engine for game
-    """ 
+    """
     print("The enemy tries to hit you with a magic attack\n")
     time.sleep(2)
     if enemy_magic_roll() >= 5:
         reduce_player_health_magic()
-        print(f"The enemy hit you with a magic attack! You have {PLAYER_HEALTH} hit points left""\n")
+        print("The enemy hit you with a magic attack!"
+              f"You have {PLAYER_HEALTH} hit points left""\n")
         time.sleep(2)
     else:
         print("The enemy missed you with its magic attack\n")
         time.sleep(2)
-       
+
 
 def enemy_attack_choice_roll():
     """
@@ -160,7 +163,6 @@ def enemy_attack_choice_roll():
 
 
 def enemy_attack_choice():
-    
     """
     decides which attack the enemy will use.
     """
@@ -204,13 +206,14 @@ def combat_encounter():
 def start_menu():
     """
     start menu for game
-    """     
+    """
 
     print("Welcome to Potentia text adventure!\n"
-    "You will be given 3 choices or a yes or no question\n"
-    "Your choice will change the story as it plays.\n"
-    "You will be given a choice of race which will change certian aspects of the game.\n"
-    "Have fun!!!")
+          "You will be given 3 choices or a yes or no question\n"
+          "Your choice will change the story as it plays.\n"
+          "You will be given a choice of race which will\n"
+          "change certian aspects of the game.\n Have fun!!!\n"
+          "\n")
     race = input("choose your race...\n"
                  "A Vahser\n"
                  "B Mortem\n"
@@ -227,19 +230,53 @@ def start_menu():
     if race in answer_A:
         global RACE_ONE
         RACE_ONE = "Vahser"
-        print(f"you have chosen a {RACE_ONE} called {character_name}")
+        print(f"you have chosen a {RACE_ONE} called {character_name}""\n"
+              "\n"
+              "The Vahser are an all female race that stand at about 5 ft.\n"
+              "The live in impressive cities under the sea and use aqua\n"
+              "magic to keep there cities in huge bubbles\n"
+              "They are very beautiful and can have any colour hair\n"
+              "but it is always dark in colour.\n"
+              "\n"
+              "Vahser use daggers, Aqua and shadow magic and can seduce"
+              " most men with ease.\n"
+              "\n")
         time.sleep(2)
         story()
     elif race in answer_B:
         global RACE_TWO
         RACE_TWO = "Mortem"
-        print(f"you have chosen a {RACE_TWO} called {character_name}")
+        print(f"you have chosen a {RACE_TWO} called {character_name}""\n"
+              "\n"
+              "The Mortem are an undead race that live on a frozen island\n"
+              "to the north. They are skeletal in looks and vary in size\n"
+              "depending on what race they were in life\n"
+              "They are completely dependant on sensory magic to emmulate\n"
+              "all their senses as they have no eyes, skin, ears, ect"
+              "\n"
+              "The Mortem have to hide their skelital appearnce as they\n"
+              "are sworn enemies of all the other races due to the war\n"
+              "of the undead over a thousand years ago"
+              " The mortem haven't been seen in a long time but\n"
+              "the other races haven't forgotten the war\n"
+              "\n"
+              "The Mortem are very differnt these days and seek peace\n"
+              "they use many melee weapons, Sensory and Cryo magic\n"
+              "\n")
         time.sleep(2)
         story()
     elif race in answer_C:
         global RACE_THREE
         RACE_THREE = "Bascula"
-        print(f"you have chosen a {RACE_THREE} called {character_name}")
+        print(f"you have chosen a {RACE_THREE} called {character_name}""\n"
+              "\n"
+              "The Bascula are a race of reptilian craftsmen and businessman\n"
+              "They stand 8 to 10 feet tall and craft most of the weapons"
+              "in Potentia.\n"
+              "They live in Volcanoes and are completely immune to fire.\n"
+              "\n"
+              "Bascula use large hammers called vasara's, Pyro and Hardening"
+              "magic. their large size intimidates most people")
         time.sleep(2)
         story()
     elif race in answer_D:
@@ -270,27 +307,34 @@ def start_menu():
         print("Please enter a valid Race choice. ")
         time.sleep(2)
         start_menu()
-        
+
 
 def story():
     """
     function to start vahser playthrough
-    """ 
+    """
 
     time.sleep(1)
-    print("\n"
-    "The Vahser are a female only race of beautiful women who live in strange cities, under the sea.\n"
-    "they use daggers and Aqua magic\n"
-    )
 
-    print("You wake up on a ship, sailing towards the Human city of Ronmara\n"
-           "You have been given a quest by Queen Callista to investigate to infiltrate a secret council meeting\n"
-           "Suddenly, a drunken sailor approches you and says 'Hello, swethart. I heard you Vahser will get with anyone. How bout a kiss?'\n"
-           "what will you do?\n"
-           "A: Punch him in his gap toothed face?\n"
-           "B: Use your charm and good looks to talk him down?\n"
-           "C: Tell him he has has no chance with you and walk away?\n"
-           "D: Special Race option")
+    print("You wake up on a ship, sailing towards the Human city of Jatorri\n"
+          "A friend of yours named Teslora lives there"
+          " and you are going to visit her"
+          " Suddenly, a drunken human sailor approches you and says 'Hello,"
+          " Mate. I need a drink and you've got that hip flask."
+          " give it er'\n"
+          "\n"
+          "what will you do?\n"
+          "A: Punch him in his gap toothed face?\n"
+          "B: Tell him the flask is full of water?\n"
+          "C: Tell him it's your booze and he can sod off?\n"
+          "D: Special Race options\n"
+          "Vahser: Use seduction\n"
+          "Mortem: Reveal your undead face to scare him\n"
+          "Bascula: intimidate him with your large size\n"
+          "Hemmel: Outsmart him with overwhelming intellect\n"
+          "Human: Offer to share with a feloow human\n"
+          "Arratoi: Hit him with a martial arts blow to knock him out\n"
+          "Fulger: Surround your body with crackeling lightning and growl")
 
     choice = input(">>>  ")
 
@@ -360,7 +404,6 @@ def Arratoi_option_1():
 
 def fulger_option_1():
     print("you are a Fulger")
-   
+
 
 start_menu()
-
