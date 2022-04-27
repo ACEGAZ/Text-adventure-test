@@ -172,6 +172,25 @@ def enemy_attack_choice():
         enemy_magic_combat()
 
 
+def start_game():
+    """
+    Asks if user is ready to start the game with chosen name and race
+    """
+    choice = input(">>>  ")
+    if choice in yes:
+        time.sleep(2)
+        print("\n")
+        story()
+    elif choice in no:
+        time.sleep(2)
+        start_menu()
+    else:
+        print(f"invalid input. Please type {yes} or {no}"
+              "\n")
+        time.sleep(4)
+        start_game()
+
+
 def combat_encounter():
     """
     runs combat until enemy or player is dead
@@ -242,7 +261,12 @@ def start_menu():
               " most men with ease.\n"
               "\n")
         time.sleep(2)
-        story()
+        print(f"Do you want to play a {RACE_ONE} called {character_name} ?"
+              "\n"
+              "yes:\n"
+              "no:")
+        start_game()
+
     elif race in answer_B:
         global RACE_TWO
         RACE_TWO = "Mortem"
@@ -264,7 +288,12 @@ def start_menu():
               "they use many melee weapons, Sensory and Cryo magic\n"
               "\n")
         time.sleep(2)
-        story()
+        print(f"Do you want to play a {RACE_TWO} called {character_name} ?"
+              "\n"
+              "yes:\n"
+              "no:")
+        start_game()
+
     elif race in answer_C:
         global RACE_THREE
         RACE_THREE = "Bascula"
@@ -278,31 +307,98 @@ def start_menu():
               "Bascula use large hammers called vasara's, Pyro and Hardening"
               "magic. their large size intimidates most people")
         time.sleep(2)
-        story()
+        print(f"Do you want to play a {RACE_THREE} called {character_name} ?"
+              "\n"
+              "yes:\n"
+              "no:")
+        start_game()
+        
     elif race in answer_D:
         global RACE_FOUR
         RACE_FOUR = "Hemmel"
-        print(f"you have chosen a {RACE_FOUR} called {character_name}")
+        print(f"you have chosen a {RACE_FOUR} called {character_name}""\n"
+              "\n"
+              "The Hemmel are a genderless race that reproduce by splitting" 
+              " their cells. they stand about 6ft tall and usually use"
+              " thier Telekenetic magic to leveitate rather than walk."
+              " Hemmel bodies have no bones so they are physically the"
+              " weakest race in Potentia, however they make up for this"
+              " with thier vast intelligence and logical thinking."
+              " They live in a floating city, high in the sky\n"
+              "\n"
+              "Hemmel use their Telekinesis magic to wield weapons"
+              " as well as creation and zephyr magic\n"
+              "\n")
         time.sleep(2)
-        story()
+        print(f"Do you want to play a {RACE_FOUR} called {character_name} ?"
+              "\n"
+              "yes:\n"
+              "no:")
+        start_game()
+
     elif race in answer_E:
         global RACE_FIVE
         RACE_FIVE = "Human"
-        print(f"you have chosen a {RACE_FIVE} called {character_name}")
+        print(f"you have chosen a {RACE_FIVE} called {character_name}""\n"
+              "\n"
+              "Humans stand anywhere from 5 to 7 ft tall and rule"
+              " Potentia. They are the most dominant race of all and"
+              " they are the only race able to use Soul magic but"
+              " it is completely forbidden.\n"
+              "\n"
+              "Humans are known to use many types of weapons and"
+              " magics, the only magic that is their own is Soul magic\n"
+              "\n")
         time.sleep(2)
-        story()
+        print(f"Do you want to play a {RACE_FIVE} called {character_name} ?"
+              "\n"
+              "yes:\n"
+              "no:")
+        start_game()
+
     elif race in answer_F:
         global RACE_SIX
         RACE_SIX = "Arratoi"
-        print(f"you have chosen a {RACE_SIX} called {character_name}")
+        print(f"you have chosen a {RACE_SIX} called {character_name}""\n"
+              "\n"
+              "The Arratoi are a race of ratlike people standing at 6 ft tall"
+              " They study martial arts in thier home to the South, inside a"
+              " mountian. They have even developed a magic based on martial"
+              " arts known as Martial magic. But thier most dangerous magic is"
+              " thier teleportation magic as it allows for instant travel"
+              " but is incredibly hard to learn\n"
+              "\n"
+              "The Arratoi use martial arts, Terra, Teleportation and Martial"
+              " magic\n"
+              "\n")
         time.sleep(2)
-        story()
+        print(f"Do you want to play a {RACE_SIX} called {character_name} ?"
+              "\n"
+              "yes:\n"
+              "no:")
+        start_game()
+
     elif race in answer_G:
         global RACE_SEVEN
         RACE_SEVEN = "Fulger"
-        print(f"you have chosen a {RACE_SEVEN} called {character_name}")
+        print(f"you have chosen a {RACE_SEVEN} called {character_name}""\n"
+              "\n"
+              "The Fulger are a wolflike people that stand at 9ft tall"
+              "They are incredible fighters and use a magic called Beasthood"
+              " to increase thier senses and physical trait to ridiculous"
+              " heights. They live in a city, surrounded by permanent lighning"
+              "storm. The Fulger get thier name from the electrical magic they"
+              " use known as Fulgeration magic. Fulger can draw power from a"
+              "storm and are immune to electrical attacks\n"
+              "\n"
+              "Fulger use metal claws, Fulgeration and Beasthood magic")
         time.sleep(2)
-        story()
+        print(f"Do you want to play a {RACE_SEVEN} called {character_name} ?"
+              "\n"
+              "yes:\n"
+              "no:")
+        start_game()
+        
     else:
         print("Please enter a valid Race choice. ")
         time.sleep(2)
@@ -311,7 +407,7 @@ def start_menu():
 
 def story():
     """
-    function to start vahser playthrough
+    function to start the playthrough
     """
 
     time.sleep(1)
