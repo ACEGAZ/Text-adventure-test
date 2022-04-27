@@ -121,7 +121,7 @@ def enemy_melee_combat():
     if enemy_attack_roll() >= 4:
         reduce_player_health_melee()
         print("The enemy hit you with a melee attack!"
-              f"You have {PLAYER_HEALTH} hit points left""\n")
+              f" You have {PLAYER_HEALTH} hit points left""\n")
         time.sleep(2)
     else:
         print("The enemy missed you with its melee attack\n")
@@ -146,7 +146,7 @@ def enemy_magic_combat():
     if enemy_magic_roll() >= 5:
         reduce_player_health_magic()
         print("The enemy hit you with a magic attack!"
-              f"You have {PLAYER_HEALTH} hit points left""\n")
+              f" You have {PLAYER_HEALTH} hit points left""\n")
         time.sleep(2)
     else:
         print("The enemy missed you with its magic attack\n")
@@ -180,7 +180,8 @@ def start_game():
     if choice in yes:
         time.sleep(2)
         print("\n")
-        story()
+        time.sleep(2)
+        story_part_1()
     elif choice in no:
         time.sleep(2)
         start_menu()
@@ -195,6 +196,8 @@ def combat_encounter():
     """
     runs combat until enemy or player is dead
     """
+    global PLAYER_HEALTH
+    global ENEMY_HEALTH
     while ENEMY_HEALTH > 0 or PLAYER_HEALTH > 0:
         print("A: melee attack\n"
               "B: magic attack\n")
@@ -207,16 +210,25 @@ def combat_encounter():
             player_magic_roll()
             player_magic_combat()
             time.sleep(2)
+        else:
+            print("Please enter a valid input")
+            time.sleep(2)
+            combat_encounter()
+
         if ENEMY_HEALTH > 0:
             enemy_attack_roll()
             enemy_magic_roll()
             enemy_attack_choice_roll()
             enemy_attack_choice()
-        if ENEMY_HEALTH <= 0:
+        elif ENEMY_HEALTH <= 0:
             print("You defeated the enemy!\n")
             time.sleep(2)
+            PLAYER_HEALTH = 10
+            ENEMY_HEALTH = 6
+            print("Your hit points have been restored.\n"
+                  f"You have {PLAYER_HEALTH} hit points")
             break
-        if PLAYER_HEALTH <= 0:
+        elif PLAYER_HEALTH <= 0:
             print("You Died!")
             time.sleep(2)
             start_menu()
@@ -228,7 +240,7 @@ def start_menu():
     """
 
     print("Welcome to Potentia text adventure!\n"
-          "You will be given 3 choices or a yes or no question\n"
+          "You will be given choices or a yes or no question\n"
           "Your choice will change the story as it plays.\n"
           "You will be given a choice of race which will\n"
           "change certian aspects of the game.\n Have fun!!!\n"
@@ -305,7 +317,7 @@ def start_menu():
               "They live in Volcanoes and are completely immune to fire.\n"
               "\n"
               "Bascula use large hammers called vasara's, Pyro and Hardening"
-              "magic. their large size intimidates most people")
+              "magic. Their large size intimidates most people")
         time.sleep(2)
         print(f"Do you want to play a {RACE_THREE} called {character_name} ?"
               "\n"
@@ -405,7 +417,7 @@ def start_menu():
         start_menu()
 
 
-def story():
+def story_part_1():
     """
     function to start the playthrough
     """
@@ -421,14 +433,15 @@ def story():
           "\n"
           "what will you do?\n"
           "A: Punch him in his gap toothed face?\n"
-          "B: Tell him the flask is full of water?\n"
-          "C: Tell him it's your booze and he can sod off?\n"
+          "B: Share your flask with him.?\n"
+          "C: Tell him the flask is full of water\n"
           "D: Special Race options\n"
+          "\n"
           "Vahser: Use seduction\n"
           "Mortem: Reveal your undead face to scare him\n"
           "Bascula: intimidate him with your large size\n"
-          "Hemmel: Outsmart him with overwhelming intellect\n"
-          "Human: Offer to share with a feloow human\n"
+          "Hemmel: Bore him with a long, detailed explination\n"
+          "Human: Point out another human with a bigger flask\n"
           "Arratoi: Hit him with a martial arts blow to knock him out\n"
           "Fulger: Surround your body with crackeling lightning and growl")
 
@@ -437,69 +450,105 @@ def story():
     if choice in answer_A:
         option_punch()
     elif choice in answer_B:
-        option_use_charm()
+        option_share()
     elif choice in answer_C:
-        option_no_chance()
+        option_lie()
     elif RACE_ONE and choice in answer_D:
-        vahser_option_1()
+        print("\n")
+        race_option_1()
     elif RACE_TWO and choice in answer_D:
-        mortem_option_1()
+        print("\n")
+        race_option_1()
     elif RACE_THREE and choice in answer_D:
-        bascula_option_1()
+        print("\n")
+        race_option_1()
     elif RACE_FOUR and choice in answer_D:
-        hemmel_option_1()
+        print("\n")
+        race_option_1()
     elif RACE_FIVE and choice in answer_D:
-        human_option_1()
+        print("\n")
+        race_option_1()
     elif RACE_SIX and choice in answer_D:
-        Arratoi_option_1()
+        print("\n")
+        race_option_1()
     elif RACE_SEVEN and choice in answer_D:
-        fulger_option_1()
+        print("\n")
+        race_option_1()
+    else:
+        print("Please select a vaild choice\n"
+              "\n")
+        time.sleep(2)
+        story_part_1()
 
 
 def option_punch():
-    print("You punch that sailor square in his face and knock out his last tooth!"
-          "He gets up and charges at you. Time to fight!")
+    """
+    Starts a combat encounter
+    """
+    print("You punch that sailor square in his face and knock out his"
+          " last tooth!"
+          " He gets up and charges at you.\n Time to fight!")
     combat_encounter()
+    print("\n You drop the sailor but get thrown in the brig for fighting.\n"
+          "The next day you are tossed onto the docks\n"
+          "\n"
+          "Feeling a little beat up you begin to walk towards your friends"
+          " house.")
 
 
-def option_use_charm():
-    print("You speak softly and tell the sailor you are young and innocent\n"
-          "You bat your eyelids and ask that he please leave such an innocent creature be\n"
-          "The sailor sees sence and walks away")
+def option_share():
+    """
+    option share with sailor
+    """
+    print("You offer to share what's in your flask. The sailor smiles and"
+          " begins drinking with you. You wake up the next day on Jatorri"
+          " city docks.")
 
 
-def option_no_chance():
-    print("You laugh at the sailor and tell him that a bottom feeder like him\n"
-           "has no chance with a girl as beautiful as you\n"
-           "The sailors eyes well and he walks away sobbing")
+def option_lie():
+    """
+    option to lie to sailor
+    """
+    print("You lie to the salior and tell him your flask is just water")
 
 
-def vahser_option_1():
-    print("You are a Vahser")
+def race_option_1():
+    """
+    lets the player choose an option depending on what race they are
+    """
+    if RACE_ONE:
+        print("You speak softly and tell the sailor you are young"
+              "and innocent.\n"
+              "You bat your eyelids and ask that he please leave such an"
+              " innocent creature be\n"
+              "The sailor sees sense and walks away")
 
+    elif RACE_TWO:
+        print("You pull down the cloth covering and reveal your face"
+              " The sailor sees the black sockets where your eyes should be."
+              "\nHe turns white and passes out.")
 
-def mortem_option_1():
-    print("you are a Mortem")
+    elif RACE_THREE:
+        print("You look down on the tiny Human and tell him to walk away!"
+              " The sailor quickly turns tail and runs")
 
+    elif RACE_FOUR:
+        print("You begin tell the sailor why alcohol is bad for him and"
+              " and explain in explicit detail how alcohol is made"
+              " The sailor falls asleep whilst you're talking")
 
-def bascula_option_1():
-    print("you are a Bascula")
+    elif RACE_FIVE:
+        print("You point the sailor towards a man with a flask twice the size"
+              " of yours. The sailor quickly heads over to bother the man.")
 
+    elif RACE_SIX:
+        print("Before the sailor can say another word you deliver a swift"
+              " punch in the solar plexus which knocks him unconscious")
 
-def hemmel_option_1():
-    print("you are a Hemmel")
-
-
-def human_option_1():
-    print("you are a Human")
-
-
-def Arratoi_option_1():
-    print("you are a Arratoi")
-
-
-def fulger_option_1():
-    print("you are a Fulger")
+    elif RACE_SEVEN:
+        print("Lightning begins to crackel from your body and arc out."
+              " You stare at the sailor and let out a guttural growl."
+              " The sailor leaves without saying another word.")
 
 
 start_menu()
