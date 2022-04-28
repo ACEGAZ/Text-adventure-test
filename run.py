@@ -354,165 +354,179 @@ def start_menu():
                  "\n"
                  ">>>"
                  )
+
+    global character_name
     character_name = input("Please name your character>>> ")
 
-    if race in answer_A:
-        global RACE_ONE
-        RACE_ONE = "Vahser"
-        print(f"you have chosen a {RACE_ONE} called {character_name}""\n"
-              "\n"
-              "The Vahser are an all female race that stand at about 5 ft.\n"
-              "The live in impressive cities under the sea and use aqua\n"
-              "magic to keep there cities in huge bubbles\n"
-              "They are very beautiful and can have any colour hair\n"
-              "but it is always dark in colour.\n"
-              "\n"
-              "Vahser use daggers, Aqua and shadow magic and can seduce"
-              " most men with ease.\n"
-              "\n")
-        time.sleep(2)
-        print(f"Do you want to play a {RACE_ONE} called {character_name} ?"
-              "\n"
-              "yes:\n"
-              "no:")
-        start_game()
+    while True:
 
-    elif race in answer_B:
-        global RACE_TWO
-        RACE_TWO = "Mortem"
-        print(f"you have chosen a {RACE_TWO} called {character_name}""\n"
-              "\n"
-              "The Mortem are an undead race that live on a frozen island\n"
-              "to the north. They are skeletal in looks and vary in size\n"
-              "depending on what race they were in life\n"
-              "They are completely dependant on sensory magic to emmulate\n"
-              "all their senses as they have no eyes, skin, ears, ect"
-              "\n"
-              "The Mortem have to hide their skelital appearnce as they\n"
-              "are sworn enemies of all the other races due to the war\n"
-              "of the undead over a thousand years ago"
-              " The mortem haven't been seen in a long time but\n"
-              "the other races haven't forgotten the war\n"
-              "\n"
-              "The Mortem are very differnt these days and seek peace\n"
-              "they use scythe weapons, Sensory and Cryo magic\n"
-              "\n")
-        time.sleep(2)
-        print(f"Do you want to play a {RACE_TWO} called {character_name} ?"
-              "\n"
-              "yes:\n"
-              "no:")
-        start_game()
+        if race in answer_A:
+            global RACE_ONE
+            RACE_ONE = "Vahser"
+            print(f"you have chosen a {RACE_ONE} called {character_name}""\n"
+                  "\n"
+                  "The Vahser are an all female race that stand at about 5 ft.\n"
+                  "The live in impressive cities under the sea and use aqua\n"
+                  "magic to keep there cities in huge bubbles\n"
+                  "They are very beautiful and can have any colour hair\n"
+                  "but it is always dark in colour.\n"
+                  "\n"
+                  "Vahser use daggers, Aqua and shadow magic and can seduce"
+                  " most men with ease.\n"
+                  "\n")
+            time.sleep(2)
+            print(f"Do you want to play a {RACE_ONE} called {character_name} ?"
+                  "\n"
+                  "yes:\n"
+                  "no:")
+            start_game()
 
-    elif race in answer_C:
-        global RACE_THREE
-        RACE_THREE = "Bascula"
-        print(f"you have chosen a {RACE_THREE} called {character_name}""\n"
-              "\n"
-              "The Bascula are a race of reptilian craftsmen and businessman\n"
-              "They stand 8 to 10 feet tall and craft most of the weapons"
-              "in Potentia.\n"
-              "They live in Volcanoes and are completely immune to fire.\n"
-              "\n"
-              "Bascula use large hammers called vasara's, Pyro and Hardening"
-              "magic. Their large size intimidates most people")
-        time.sleep(2)
-        print(f"Do you want to play a {RACE_THREE} called {character_name} ?"
-              "\n"
-              "yes:\n"
-              "no:")
-        start_game()
+        elif race in answer_B:
+            global RACE_TWO
+            RACE_TWO = "Mortem"
+            print(f"you have chosen a {RACE_TWO} called {character_name}""\n"
+                  "\n"
+                  "The Mortem are an undead race that live on a frozen island\n"
+                  "to the north. They are skeletal in looks and vary in size\n"
+                  "depending on what race they were in life\n"
+                  "They are completely dependant on sensory magic to emmulate\n"
+                  "all their senses as they have no eyes, skin, ears, ect"
+                  "\n"
+                  "The Mortem have to hide their skelital appearnce as they\n"
+                  "are sworn enemies of all the other races due to the war\n"
+                  "of the undead over a thousand years ago"
+                  " The mortem haven't been seen in a long time but\n"
+                  "the other races haven't forgotten the war\n"
+                  "\n"
+                  "The Mortem are very differnt these days and seek peace\n"
+                  "they use scythe weapons, Sensory and Cryo magic\n"
+                  "\n")
+            time.sleep(2)
+            print(f"Do you want to play a {RACE_TWO} called {character_name} ?"
+                  "\n"
+                  "yes:\n"
+                  "no:")
+            start_game()
+
+        elif race in answer_C:
+            global RACE_THREE
+            RACE_THREE = "Bascula"
+            print(f"you have chosen a {RACE_THREE} called {character_name}""\n"
+                  "\n"
+                  "The Bascula are a race of reptilian craftsmen and businessman\n"
+                  "They stand 8 to 10 feet tall and craft most of the weapons"
+                  "in Potentia.\n"
+                  "They live in Volcanoes and are completely immune to fire.\n"
+                  "\n"
+                  "Bascula use large hammers called vasara's, Pyro and Hardening"
+                  "magic. Their large size intimidates most people")
+            time.sleep(2)
+            print(f"Do you want to play a {RACE_THREE} called {character_name} ?"
+                  "\n"
+                  "yes:\n"
+                  "no:")
+            start_game()
         
-    elif race in answer_D:
-        global RACE_FOUR
-        RACE_FOUR = "Hemmel"
-        print(f"you have chosen a {RACE_FOUR} called {character_name}""\n"
-              "\n"
-              "The Hemmel are a genderless race that reproduce by splitting" 
-              " their cells. they stand about 6ft tall and usually use"
-              " thier Telekenetic magic to leveitate rather than walk."
-              " Hemmel bodies have no bones so they are physically the"
-              " weakest race in Potentia, however they make up for this"
-              " with thier vast intelligence and logical thinking."
-              " They live in a floating city, high in the sky\n"
-              "\n"
-              "Hemmel use their Telekinesis magic to wield weapons"
-              " as well as creation and zephyr magic\n"
-              "\n")
-        time.sleep(2)
-        print(f"Do you want to play a {RACE_FOUR} called {character_name} ?"
-              "\n"
-              "yes:\n"
-              "no:")
-        start_game()
+        elif race in answer_D:
+            global RACE_FOUR
+            RACE_FOUR = "Hemmel"
+            print(f"you have chosen a {RACE_FOUR} called {character_name}""\n"
+                  "\n"
+                  "The Hemmel are a genderless race that reproduce by splitting"
+                  " their cells. they stand about 6ft tall and usually use"
+                  " thier Telekenetic magic to leveitate rather than walk."
+                  " Hemmel bodies have no bones so they are physically the"
+                  " weakest race in Potentia, however they make up for this"
+                  " with thier vast intelligence and logical thinking."
+                  " They live in a floating city, high in the sky\n"
+                  "\n"
+                  "Hemmel use their Telekinesis magic to wield weapons"
+                  " as well as creation and zephyr magic\n"
+                  "\n")
+            time.sleep(2)
+            print(f"Do you want to play a {RACE_FOUR} called {character_name} ?"
+                  "\n"
+                  "yes:\n"
+                  "no:")
+            start_game()
 
-    elif race in answer_E:
-        global RACE_FIVE
-        RACE_FIVE = "Human"
-        print(f"you have chosen a {RACE_FIVE} called {character_name}""\n"
-              "\n"
-              "Humans stand anywhere from 5 to 7 ft tall and rule"
-              " Potentia. They are the most dominant race of all and"
-              " they are the only race able to use Soul magic but"
-              " it is completely forbidden.\n"
-              "\n"
-              "Humans are known to use many types of weapons and"
-              " magics, the only magic that is their own is Soul magic\n"
-              "\n")
-        time.sleep(2)
-        print(f"Do you want to play a {RACE_FIVE} called {character_name} ?"
-              "\n"
-              "yes:\n"
-              "no:")
-        start_game()
+        elif race in answer_E:
+            global RACE_FIVE
+            RACE_FIVE = "Human"
+            print(f"you have chosen a {RACE_FIVE} called {character_name}""\n"
+                  "\n"
+                  "Humans stand anywhere from 5 to 7 ft tall and rule"
+                  " Potentia. They are the most dominant race of all and"
+                  " they are the only race able to use Soul magic but"
+                  " it is completely forbidden.\n"
+                  "\n"
+                  "Humans are known to use many types of weapons and"
+                  " magics, the only magic that is their own is Soul magic\n"
+                  "\n")
+            time.sleep(2)
+            print(f"Do you want to play a {RACE_FIVE} called {character_name} ?"
+                  "\n"
+                  "yes:\n"
+                  "no:")
+            start_game()
 
-    elif race in answer_F:
-        global RACE_SIX
-        RACE_SIX = "Arratoi"
-        print(f"you have chosen a {RACE_SIX} called {character_name}""\n"
-              "\n"
-              "The Arratoi are a race of ratlike people standing at 6 ft tall"
-              " They study martial arts in thier home to the South, inside a"
-              " mountian. They have even developed a magic based on martial"
-              " arts known as Martial magic. But thier most dangerous magic is"
-              " thier teleportation magic as it allows for instant travel"
-              " but is incredibly hard to learn\n"
-              "\n"
-              "The Arratoi use martial arts, Terra, Teleportation and Martial"
-              " magic\n"
-              "\n")
-        time.sleep(2)
-        print(f"Do you want to play a {RACE_SIX} called {character_name} ?"
-              "\n"
-              "yes:\n"
-              "no:")
-        start_game()
+        elif race in answer_F:
+            global RACE_SIX
+            RACE_SIX = "Arratoi"
+            print(f"you have chosen a {RACE_SIX} called {character_name}""\n"
+                  "\n"
+                  "The Arratoi are a race of ratlike people standing at 6 ft tall"
+                  " They study martial arts in thier home to the South, inside a"
+                  " mountian. They have even developed a magic based on martial"
+                  " arts known as Martial magic. But thier most dangerous magic is"
+                  " thier teleportation magic as it allows for instant travel"
+                  " but is incredibly hard to learn\n"
+                  "\n"
+                  "The Arratoi use martial arts, Terra, Teleportation and Martial"
+                  " magic\n"
+                  "\n")
+            time.sleep(2)
+            print(f"Do you want to play a {RACE_SIX} called {character_name} ?"
+                  "\n"
+                  "yes:\n"
+                  "no:")
+            start_game()
 
-    elif race in answer_G:
-        global RACE_SEVEN
-        RACE_SEVEN = "Fulger"
-        print(f"you have chosen a {RACE_SEVEN} called {character_name}""\n"
-              "\n"
-              "The Fulger are a wolflike people that stand at 9ft tall"
-              "They are incredible fighters and use a magic called Beasthood"
-              " to increase thier senses and physical trait to ridiculous"
-              " heights. They live in a city, surrounded by permanent lighning"
-              "storm. The Fulger get thier name from the electrical magic they"
-              " use known as Fulgeration magic. Fulger can draw power from a"
-              "storm and are immune to electrical attacks\n"
-              "\n"
-              "Fulger use metal claws, Fulgeration and Beasthood magic")
-        time.sleep(2)
-        print(f"Do you want to play a {RACE_SEVEN} called {character_name} ?"
-              "\n"
-              "yes:\n"
-              "no:")
-        start_game()
-        
-    else:
-        print("Please enter a valid Race choice. ")
-        time.sleep(2)
-        start_menu()
+        elif race in answer_G:
+            global RACE_SEVEN
+            RACE_SEVEN = "Fulger"
+            print(f"you have chosen a {RACE_SEVEN} called {character_name}""\n"
+                  "\n"
+                  "The Fulger are a wolflike people that stand at 9ft tall"
+                  "They are incredible fighters and use a magic called Beasthood"
+                  " to increase thier senses and physical trait to ridiculous"
+                  " heights. They live in a city, surrounded by permanent lighning"
+                  "storm. The Fulger get thier name from the electrical magic they"
+                  " use known as Fulgeration magic. Fulger can draw power from a"
+                  "storm and are immune to electrical attacks\n"
+                  "\n"
+                  "Fulger use metal claws, Fulgeration and Beasthood magic")
+            time.sleep(2)
+            print(f"Do you want to play a {RACE_SEVEN} called {character_name} ?"
+                  "\n"
+                  "yes:\n"
+                  "no:")
+            start_game()
+
+        else:
+            print("\n"
+                  "Please enter a valid Race choice.\n"
+                  "\n")
+            race = input("choose your race...\n"
+                         "A Vahser\n"
+                         "B Mortem\n"
+                         "C Bascula\n"
+                         "D Hemmel\n"
+                         "E Human\n"
+                         "F Arratoi\n"
+                         "G Fulger\n"
+                         "\n"
+                         ">>> ")
 
 
 def story_part_1():
@@ -545,7 +559,7 @@ def story_part_1():
     elif RACE_THREE:
         print("Bascula: intimidate him with your large size.\n"
               "\n")
-          
+
     elif RACE_FOUR:
         print("Hemmel: Bore him with a long, detailed explination.\n"
               "\n")
@@ -557,46 +571,44 @@ def story_part_1():
     elif RACE_SIX:
         print("Arratoi: Hit him with a martial arts blow to knock him out.\n"
               "\n")
-          
+
     elif RACE_SEVEN:
         print("Fulger: Surround your body with lightning and growl.\n"
               "\n")
-          
-    choice = input(">>>  \n"
-                   "\n")
 
-    if choice in answer_A:
-        option_punch()
-    elif choice in answer_B:
-        option_share()
-    elif choice in answer_C:
-        option_lie()
-    elif RACE_ONE and choice in answer_D:
-        print("\n")
-        race_option_1()
-    elif RACE_TWO and choice in answer_D:
-        print("\n")
-        race_option_1()
-    elif RACE_THREE and choice in answer_D:
-        print("\n")
-        race_option_1()
-    elif RACE_FOUR and choice in answer_D:
-        print("\n")
-        race_option_1()
-    elif RACE_FIVE and choice in answer_D:
-        print("\n")
-        race_option_1()
-    elif RACE_SIX and choice in answer_D:
-        print("\n")
-        race_option_1()
-    elif RACE_SEVEN and choice in answer_D:
-        print("\n")
-        race_option_1()
-    else:
-        print("Please select a vaild choice\n"
-              "\n")
-        time.sleep(2)
-        story_part_1()
+    choice = input(">>> ")
+    
+    while True:
+        if choice in answer_A:
+            option_punch()
+        elif choice in answer_B:
+            option_share()
+        elif choice in answer_C:
+            option_lie()
+        elif RACE_ONE and choice in answer_D:
+            print("\n")
+            race_option_1()
+        elif RACE_TWO and choice in answer_D:
+            print("\n")
+            race_option_1()
+        elif RACE_THREE and choice in answer_D:
+            print("\n")
+            race_option_1()
+        elif RACE_FOUR and choice in answer_D:
+            print("\n")
+            race_option_1()
+        elif RACE_FIVE and choice in answer_D:
+            print("\n")
+            race_option_1()
+        elif RACE_SIX and choice in answer_D:
+            print("\n")
+            race_option_1()
+        elif RACE_SEVEN and choice in answer_D:
+            print("\n")
+            race_option_1()
+        else:
+            print("Please select a vaild choice.")
+            choice = input(">>> ")
 
 
 def option_punch():
@@ -611,7 +623,8 @@ def option_punch():
           "The next day you are tossed onto the docks\n"
           "\n"
           "Feeling a little beat up you begin to walk towards your friends"
-          " house.")
+          " house.\n"
+          "\n")
 
 
 def option_share():
@@ -621,7 +634,10 @@ def option_share():
     print("You offer to share what's in your flask. The sailor smiles and"
           " begins drinking with you. You wake up the next day on Jatorri"
           " city docks.\n"
-          "You feel a very hungover and decide to walk to your friends house")
+          "You feel a very hungover and decide to walk to your friends house\n"
+          "\n")
+    time.sleep(2)
+    story_part_2()
 
 
 def option_lie():
@@ -638,19 +654,24 @@ def option_lie():
     choice = input(">>>  \n"
                    "\n")
 
-    if choice in answer_A:
-        print("You decide to fight the sailor and charge at him!")
-        combat_encounter()
-    elif choice in answer_B:
-        print("You throw the flask overboard. The sailor ,desprate\n"
-              "for a drink jumps in after the flask\n"
-              "\n"
-              "The rest of your trip is very peaceful and you arrive at the\n"
-              "docks. You begin walking to your friends house.")
-    else:
-        print("Please select a valid choice.")
-        time.sleep(2)
-        option_lie()
+    while True:
+        if choice in answer_A:
+            print("You decide to fight the sailor and charge at him!")
+            combat_encounter()
+            time.sleep(2)
+            story_part_2()
+        elif choice in answer_B:
+            print("You throw the flask overboard. The sailor, desprate\n"
+                  "for a drink jumps in after the flask\n"
+                  "\n"
+                  "The rest of your trip is very peaceful and you arrive at the\n"
+                  "docks. You begin walking to your friends house.\n"
+                  "\n")
+            time.sleep(2)
+            story_part_2()
+        else:
+            print("Please select a valid choice.")
+            choice = input(">>> ")
 
 
 def race_option_1():
@@ -662,34 +683,154 @@ def race_option_1():
               "and innocent.\n"
               "You bat your eyelids and ask that he please leave such an"
               " innocent creature be\n"
-              "The sailor sees sense and walks away")
+              "The sailor sees sense and walks away\n"
+              "\n"
+              "You arrive at the docks and walk towards your friends house")
+        time.sleep(2)      
+        story_part_2()
 
     elif RACE_TWO:
         print("You pull down the cloth covering and reveal your face"
               " The sailor sees the black sockets where your eyes should be."
-              "\nHe turns white and passes out.")
+              "\nHe turns white and passes out.\n"
+              "\n"
+              "You arrive at the docks and walk towards your friends house")
+        time.sleep(2)
+        story_part_2()
 
     elif RACE_THREE:
         print("You look down on the tiny Human and tell him to walk away!"
-              " The sailor quickly turns tail and runs")
+              " The sailor quickly turns tail and runs\n"
+              "\n"
+              "You arrive at the docks and walk towards your friends house")
+        time.sleep(2)
+        story_part_2()
 
     elif RACE_FOUR:
         print("You begin tell the sailor why alcohol is bad for him and"
               " and explain in explicit detail how alcohol is made"
-              " The sailor falls asleep whilst you're talking")
+              " The sailor falls asleep whilst you're talking\n"
+              "\n"
+              "You arrive at the docks and walk towards your friends house")
+        time.sleep(2)
+        story_part_2()
 
     elif RACE_FIVE:
         print("You point the sailor towards a man with a flask twice the size"
-              " of yours. The sailor quickly heads over to bother the man.")
+              " of yours. The sailor quickly heads over to bother the man.\n"
+              "\n"
+              "You arrive at the docks and walk towards your friends house")
+        time.sleep(2)
+        story_part_2()
 
     elif RACE_SIX:
-        print("Before the sailor can say another word you deliver a swift"
-              " punch in the solar plexus which knocks him unconscious")
+        print("Before the sailor can say another word you deliver a swift\n"
+              "punch in the solar plexus which knocks him unconscious\n"
+              "\n"
+              "You arrive at the docks and walk towards your friends house")
+        time.sleep(2)
+        story_part_2()
 
     elif RACE_SEVEN:
-        print("Lightning begins to crackel from your body and arc out."
-              " You stare at the sailor and let out a guttural growl."
-              " The sailor leaves without saying another word.")
+        print("Lightning begins to crackel from your body and arc out.\n"
+              "You stare at the sailor and let out a guttural growl.\n"
+              "The sailor leaves without saying another word.\n"
+              "\n"
+              "You arrive at the docks and walk towards your friends house")
+        time.sleep(2)
+        story_part_2()
+
+
+def story_part_2():
+    """
+    function to start the second part of the story
+    """
+
+    print("You make your way through Jatorri city. The city is a marvel of\n"
+          "Human ingenuity. The city is built into a canyon and supended\n"
+          "above it. The city is connected by huge suspension bridges\n"
+          "\n"
+          "You eventually make it to Teslora's house and knock on the\n"
+          "door...\n"
+          "\n")
+    time.sleep(3)
+    print("There is no answer\n"
+          "\n")
+    time.sleep(3)
+    print("You look at the door lock and notice that it is broken\n"
+          "You slowly push the door open to reveal Tesloras' corpse\n"
+          "\n"
+          "The room is covered in blood and Teslora is slumped in\n"
+          "her chair with a bloody note stuck into her body\n"
+          "\n"
+          "What do you do?\n"
+          "\n"
+          "A: Search the room?\n"
+          "B: Read the bloody note?\n"
+          "C: Find a member of the Jatorri city gaurd to report a murder?\n")
+
+    choice = input(">>> ")
+
+    while True:    
+        if choice in answer_A:
+            option_search()
+
+
+def option_search():
+    """
+    function to allow player to search the room
+    """
+    global character_name
+    print("You begin frantically searching the room, looking for anything!\n")
+    print(f"You find a sealed letter with '{character_name}' written on it"
+          "\n")
+    print(f"The letter reads 'Dear, {character_name}.\n"
+          "\n"
+          "I had hoped to see you one last time but it looks like my\n"
+          "death is inevitable. A killer has been hunting Jattori council\n"
+          "members and I fear I am next. if you find me, please grant my\n"
+          "body liberation. \n"
+          "I know we didn't see each other as often as we should but you\n"
+          "were my best friend in my lonely life.\n"
+          "\n")
+    print(f"Thank you, {character_name}.")
+    time.sleep(2)
+    print("\n"
+          "Will you grant Tesloras' body liberation?\n"
+          "It is a ritual to disperse a persons body into magical energy\n"
+          "but it takes a few minutes to preform\n"
+          "\n"
+          "yes?\n"
+          "No?")
+    choice = input(">>> ")
+
+    while True:
+
+        if choice in yes:
+            print("You perform the ritual and Tesloras' body falls away into\n"
+                  "shimmering colours... She is at peace."
+                  "\n")
+            time.sleep(2)
+            print("Suddenly the Jatorri city military burst through the\n"
+                  "door!\n Before you know what's\n"
+                  "happening you are tackeled and bound")
+        elif choice in no:
+            print("You hear a noise outside the house. It sounds like 10 or \n"
+                  "more people about to burst through the door.\n"
+                  "\n"
+                  "What do you do?"
+                  "A: Hide\n"
+                  "B: Run\n"
+                  "C: Special Race option:\n")
+        else:
+            print(f"Please type {yes} or {no}.\n")
+            choice = input(">>> ")
+
+    while True:
+        if choice in answer_A:
+            print("You hide in a nearby cupboard. The military breaks through\n"
+                  "The door and begins seraching the house. it doesnt take\n"
+                  "long before you are found.")
 
 
 start_menu()
