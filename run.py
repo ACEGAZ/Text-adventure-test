@@ -73,11 +73,61 @@ def player_melee_combat():
     """
     player melee combat engine for game
     """
-    if player_attack_roll() >= 4:
-        reduce_enemy_health_melee()
-        print(f" hit! enemy has {ENEMY_HEALTH} hit points left""\n")
-    else:
-        print("You missed\n")
+    if RACE_ONE:
+        if player_attack_roll() >= 4:
+            reduce_enemy_health_melee()
+            print("You attack with your daggers and hit!"
+                  f" Enemy has {ENEMY_HEALTH} hit points left""\n")
+        else:
+            print("You missed\n")
+
+    elif RACE_TWO:
+        if player_attack_roll() >= 4:
+            reduce_enemy_health_melee()
+            print(" You swing with your scythe and hit!"
+                  f" Enemy has {ENEMY_HEALTH} hit points left""\n")
+        else:
+            print("You missed\n")
+
+    elif RACE_THREE:
+        if player_attack_roll() >= 4:
+            reduce_enemy_health_melee()
+            print(" You crash down your Vasara and hit!"
+                  f" Enemy has {ENEMY_HEALTH} hit points left""\n")
+        else:
+            print("You missed\n")
+
+    elif RACE_FOUR:
+        if player_attack_roll() >= 4:
+            reduce_enemy_health_melee()
+            print("You levitate and slash with floating swords and hit!"
+                  f" Enemy has {ENEMY_HEALTH} hit points left""\n")
+        else:
+            print("You missed\n")
+
+    elif RACE_FIVE:
+        if player_attack_roll() >= 4:
+            reduce_enemy_health_melee()
+            print("You slash with your sword and hit!"
+                  f" Enemy has {ENEMY_HEALTH} hit points left""\n")
+        else:
+            print("You missed\n")
+
+    elif RACE_SIX:
+        if player_attack_roll() >= 4:
+            reduce_enemy_health_melee()
+            print("You unleash a powerful martial arts strike and hit!"
+                  f" Enemy has {ENEMY_HEALTH} hit points left""\n")
+        else:
+            print("You missed\n")
+
+    elif RACE_SEVEN:
+        if player_attack_roll() >= 4:
+            reduce_enemy_health_melee()
+            print("You slash with your sharp, metal claws and hit!"
+                  f" Enemy has {ENEMY_HEALTH} hit points left""\n")
+        else:
+            print("You missed\n")
 
 
 def player_magic_roll():
@@ -93,13 +143,61 @@ def player_magic_combat():
     """
     player magic combat engine for game
     """
+    if RACE_ONE:
+        if player_magic_roll() >= 5:
+            reduce_enemy_health_magic()
+            print("You send a jet of water flying at the enemy and hit!"
+                  f" The enemy has {ENEMY_HEALTH} hit points left""\n")
+        else:
+            print("Your Aqua magic misses\n")
 
-    if player_magic_roll() >= 5:
-        reduce_enemy_health_magic()
-        print(f"You hit with magic attack!, enemy has {ENEMY_HEALTH} hit"
-              "points left""\n")
-    else:
-        print("You hurl magical energy at the enemy but miss\n")
+    elif RACE_TWO:
+        if player_magic_roll() >= 5:
+            reduce_enemy_health_magic()
+            print("You send shards of ice flying at the enemy and hit!"
+                  f" The enemy has {ENEMY_HEALTH} hit points left""\n")
+        else:
+            print("Your Cryo magic misses\n")
+
+    elif RACE_THREE:
+        if player_magic_roll() >= 5:
+            reduce_enemy_health_magic()
+            print("You send a fireball flying at the enemy and hit!"
+                  f" The enemy has {ENEMY_HEALTH} hit points left""\n")
+        else:
+            print("Your Pyro magic misses\n")
+
+    elif RACE_FOUR:
+        if player_magic_roll() >= 5:
+            reduce_enemy_health_magic()
+            print("You send a blast of wind towards the enemy and hit!"
+                  f" The enemy has {ENEMY_HEALTH} hit points left""\n")
+        else:
+            print("Your zephyr magic misses\n")
+
+    elif RACE_FIVE:
+        if player_magic_roll() >= 5:
+            reduce_enemy_health_magic()
+            print("You drain some of the enemies soul!"
+                  f" The enemy has {ENEMY_HEALTH} hit points left""\n")
+        else:
+            print("Your Soul magic misses\n")
+
+    elif RACE_SIX:
+        if player_magic_roll() >= 5:
+            reduce_enemy_health_magic()
+            print("You send a chunk of rock flying towards the enemy and hit!"
+                  f" The enemy has {ENEMY_HEALTH} hit points left""\n")
+        else:
+            print("Your Terra magic misses\n")
+
+    elif RACE_SEVEN:
+        if player_magic_roll() >= 5:
+            reduce_enemy_health_magic()
+            print("You send a blot of lighning flying at the enemy and hit!"
+                  f" The enemy has {ENEMY_HEALTH} hit points left""\n")
+        else:
+            print("Your Fulgeration magic misses\n")
 
 
 def enemy_attack_roll():
@@ -297,7 +395,7 @@ def start_menu():
               "the other races haven't forgotten the war\n"
               "\n"
               "The Mortem are very differnt these days and seek peace\n"
-              "they use many melee weapons, Sensory and Cryo magic\n"
+              "they use scythe weapons, Sensory and Cryo magic\n"
               "\n")
         time.sleep(2)
         print(f"Do you want to play a {RACE_TWO} called {character_name} ?"
@@ -432,20 +530,40 @@ def story_part_1():
           " give it er'\n"
           "\n"
           "what will you do?\n"
+          "\n"
           "A: Punch him in his gap toothed face?\n"
           "B: Share your flask with him.?\n"
-          "C: Tell him the flask is full of water\n"
-          "D: Special Race options\n"
-          "\n"
-          "Vahser: Use seduction\n"
-          "Mortem: Reveal your undead face to scare him\n"
-          "Bascula: intimidate him with your large size\n"
-          "Hemmel: Bore him with a long, detailed explination\n"
-          "Human: Point out another human with a bigger flask\n"
-          "Arratoi: Hit him with a martial arts blow to knock him out\n"
-          "Fulger: Surround your body with crackeling lightning and growl")
+          "C: Tell him the flask is full of water?\n"
+          "D: Special Race options\n")
+    if RACE_ONE:
+        print("Vahser: Use seduction.")
 
-    choice = input(">>>  ")
+    elif RACE_TWO:
+        print("Mortem: Reveal your undead face to scare him.\n"
+              "\n")
+
+    elif RACE_THREE:
+        print("Bascula: intimidate him with your large size.\n"
+              "\n")
+          
+    elif RACE_FOUR:
+        print("Hemmel: Bore him with a long, detailed explination.\n"
+              "\n")
+
+    elif RACE_FIVE:
+        print("Human: Point out another human with a bigger flask.\n"
+              "\n")
+
+    elif RACE_SIX:
+        print("Arratoi: Hit him with a martial arts blow to knock him out.\n"
+              "\n")
+          
+    elif RACE_SEVEN:
+        print("Fulger: Surround your body with lightning and growl.\n"
+              "\n")
+          
+    choice = input(">>>  \n"
+                   "\n")
 
     if choice in answer_A:
         option_punch()
@@ -502,14 +620,37 @@ def option_share():
     """
     print("You offer to share what's in your flask. The sailor smiles and"
           " begins drinking with you. You wake up the next day on Jatorri"
-          " city docks.")
+          " city docks.\n"
+          "You feel a very hungover and decide to walk to your friends house")
 
 
 def option_lie():
     """
     option to lie to sailor
     """
-    print("You lie to the salior and tell him your flask is just water")
+    print("You lie to the salior and tell him your flask is just water\n"
+          "The sailor looks ominously at the flask and tries to snatch it!"
+          "\n"
+          "What will you do?\n"
+          "A: Fight the sailor?\n"
+          "B: Throw the flask overboard?"
+          )
+    choice = input(">>>  \n"
+                   "\n")
+
+    if choice in answer_A:
+        print("You decide to fight the sailor and charge at him!")
+        combat_encounter()
+    elif choice in answer_B:
+        print("You throw the flask overboard. The sailor ,desprate\n"
+              "for a drink jumps in after the flask\n"
+              "\n"
+              "The rest of your trip is very peaceful and you arrive at the\n"
+              "docks. You begin walking to your friends house.")
+    else:
+        print("Please select a valid choice.")
+        time.sleep(2)
+        option_lie()
 
 
 def race_option_1():
