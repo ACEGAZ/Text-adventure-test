@@ -395,7 +395,7 @@ def start_menu():
                   "\n"
                   "The Mortem have to hide their skelital appearnce as they\n"
                   "are sworn enemies of all the other races due to the war\n"
-                  "of the undead over a thousand years ago"
+                  "of the undead over a thousand years ago."
                   " The mortem haven't been seen in a long time but\n"
                   "the other races haven't forgotten the war\n"
                   "\n"
@@ -526,13 +526,13 @@ def start_menu():
                   "Please enter a valid Race choice.\n"
                   "\n")
             race = input("choose your race...\n"
-                         "A Vahser\n"
-                         "B Mortem\n"
-                         "C Bascula\n"
-                         "D Hemmel\n"
-                         "E Human\n"
-                         "F Arratoi\n"
-                         "G Fulger\n"
+                         "A: Vahser\n"
+                         "B: Mortem\n"
+                         "C: Bascula\n"
+                         "D: Hemmel\n"
+                         "E: Human\n"
+                         "F: Arratoi\n"
+                         "G: Fulger\n"
                          "\n"
                          ">>> ")
 
@@ -546,8 +546,9 @@ def story_part_1():
 
     print("You wake up on a ship, sailing towards the Human city of Jatorri\n"
           "A friend of yours named Teslora lives there"
-          " and you are going to visit her"
-          " Suddenly, a drunken human sailor approches you and says 'Hello,"
+          " and you are going to visit her."
+          " Suddenly, a drunken human sailor approches\n" 
+          "you and says 'Hello,"
           " Mate. I need a drink and you've got that hip flask."
           " give it er'\n"
           "\n"
@@ -732,20 +733,20 @@ def story_part_2():
 
     print("You make your way through Jatorri city. The city is a marvel of\n"
           "Human ingenuity. The city is built into a canyon and supended\n"
-          "above it. The city is connected by huge suspension bridges\n"
+          "above it. The city is connected by huge suspension bridges.\n"
           "\n"
           "You eventually make it to Teslora's house and knock on the\n"
           "door...\n"
           "\n")
-    time.sleep(3)
+    time.sleep(5)
     print("There is no answer...\n"
           "\n")
-    time.sleep(3)
+    time.sleep(5)
     print("You look at the door lock and notice that it is broken\n"
-          "You slowly push the door open to reveal Tesloras' corpse\n"
+          "You slowly push the door open to reveal Tesloras' corpse.\n"
           "\n"
           "The room is covered in blood and Teslora is slumped in\n"
-          "her chair with a bloody note stuck into her body\n"
+          "her chair with a bloody note stuck into her body.\n"
           "\n"
           "What do you do?\n"
           "\n"
@@ -770,6 +771,7 @@ def story_part_2():
 def option_search():
     """
     function to allow player to search the room
+    and then either escape or be captured.
     """
     global character_name
     print("You begin frantically searching the room, looking for anything!\n")
@@ -930,6 +932,7 @@ def option_search():
 def read_bloody_note():
     """
     function to allow player to read the bloody note
+    and then either escape or be captured.
     """
     print("You peel the note from Tesloras' body\n"
           "and begin to read. The note reads.\n"
@@ -1058,6 +1061,7 @@ def read_bloody_note():
 def find_gaurd():
     """
     function to allow player to find a gaurd
+    and then be captured.
     """
     print("You run out the door as fast as\n"
           "you can to find a gaurd, but as you\n"
@@ -1065,18 +1069,117 @@ def find_gaurd():
           "military miltia are standing in\n"
           "front of you. They see the body behind\n"
           "you and quickly arrest you.\n"
+          "A bag is thrown over your head\n"
+          "and you are taken away.\n"
           "\n")
     time.sleep(2)
     option_capture()
 
 
 def option_capture():
-    print("Story so far")
-    input(">>>")
+    """
+    function if player is captured.
+    """
+    print("A bag is thrown over your head.\n"
+          "\n")
+    time.sleep(2)
+    print("You are taken to an unkown location.\n"
+          "and placed in a secure room.\n"
+          "Your hands are chained and you can\n"
+          "feel that your magic is being blocked\n"
+          "somehow.\n"
+          "\n")
+    time.sleep(2)
+    print("The door opens and a beautiful Vahser woman steps\n"
+          "through. She sits across from you and in a\n"
+          "menacing voice says 'I'm going to ask you\n"
+          "some questions and you're going to answer.\n"
+          "them. Because if you don't it will be...\n"
+          "painfull.'\n"
+          "\n"
+          "Are you the Jatorri city slayer?\n"
+          "\n"
+          "What will you do?\n"
+          "\n"
+          "A: Tell her your're not the slayer?\n"
+          "B: Tell her Your're not answering any questions?\n"
+          "C: Spit in her face!?")
+
+    choice = input(">>> ")
+
+    while True:
+        if choice in answer_A:
+            print("You tell her that you're not the slayer.\n"
+                  "She looks at you and says 'I believe you.\n"
+                  "You look far too stupid to be the real slayer.\n"
+                  "\n"
+                  "So... who are you?'\n"
+                  "\n"
+                  "A: Tell her who you are?\n"
+                  "B: Tell her you're nobody?\n"
+                  "C: Spit in her face?")
+            choice = input(">>> ")
+            if choice in answer_A:
+                print(f"You tell her your name is {character_name}\n"
+                      "and that you were just here visiting your\n"
+                      "friend.")
+
+        elif choice in answer_B:
+            print("You refuse to answer any questions.\n"
+                  "The woman stands and pulls a knife from her\n"
+                  "hip and slowly stabs it into your hand.\n"
+                  "\n"
+                  "The knife digs into your hand!")
+            global PLAYER_HEALTH
+            PLAYER_HEALTH = 8
+            print(f"You have {PLAYER_HEALTH} hit points left\n"
+                  "\n"
+                  "The woman asks again. Who are you?\n"
+                  "\n"
+                  "A: Tell her who you are?\n"
+                  "B: Spit in her face?")
+
+            choice = input(">>> ")
+
+            if choice in answer_A:
+                print(f"You tell her your name is {character_name}\n"
+                      "and that you were just here visiting your\n"
+                      "friend.")
+            elif choice in answer_B:
+                print("You spit in her face!\n"
+                      "The woman pulls a knife from her hip and\n"
+                      "stabs you in the throat!!!\n")
+                time.sleep(2)
+                print("You died!\n"
+                      "\n")
+                PLAYER_HEALTH = 10
+                start_menu()
+
+            else:
+                print("Please select a valid choice?\n")
+                choice = input(">>> ")
+
+        elif choice in answer_C:
+            print("You spit in her face!"
+                  "The woman pulls a knife from her hip and\n"
+                  "stabs you in the throat!!!\n")
+            time.sleep(2)
+            print("You died!\n"
+                  "\n")
+            PLAYER_HEALTH = 10
+            start_menu()
+
+        else:
+            print("Please select a valid choice?\n")
+            choice = input(">>> ")
 
 
 def option_escape():
-    print("story so far")
+    """
+    function if player escapes.
+    """
+    print("")
     input(">>>")
+
 
 start_menu()
