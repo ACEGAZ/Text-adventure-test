@@ -324,7 +324,8 @@ def combat_encounter():
             PLAYER_HEALTH = 10
             ENEMY_HEALTH = 6
             print("Your hit points have been restored.\n"
-                  f"You have {PLAYER_HEALTH} hit points")
+                  f"You have {PLAYER_HEALTH} hit points\n"
+                  "\n")
             break
         elif PLAYER_HEALTH <= 0:
             print("You Died!")
@@ -1379,12 +1380,101 @@ def option_escape():
     """
     function if player escapes.
     """
-    print("")
-    input(">>>")
+    print("You manage to get away from the house but\n"
+          "but hear a man from behind you shout\n"
+          "'over there, they're escaping!'\n"
+          "\n"
+          "Gaurds and solders start running after you.\n"
+          "\n"
+          "What do you do\n"
+          "A: Take to the rooftops?\n"
+          "B: Head for the back alleys?")
+    choice = input(">>> ")
 
+    while True:
+        if choice in answer_A:
+            print("You climb up a window ledge and get to\n"
+                  "the rooftops. You jump from rooftop to rooftop\n"
+                  "and lose all but one of the solders.\n"
+                  "\n"
+                  "You see a 10 ft gap up ahead!\n"
+                  "\n"
+                  "do you jump?\n"
+                  "Yes:\n"
+                  "No:\n"
+                  "\n")
+            choice = input(">>> ")
+
+            if choice in yes:
+                time.sleep(2)
+                print("You jump the gap! You land on the other\n"
+                      "side and continue running")
+                time.sleep(2)
+                print("The soldier chasing you leaps the gap!"
+                      "You get a good look at him. He is a\n"
+                      "Fulger with a look of determination in\n"
+                      "his eyes!\n"
+                      "\n"
+                      "He starts casting bolts of lightning at you\n"
+                      "What do you do?\n"
+                      "A: Stop and fight the soldier?\n"
+                      "B: Jump the 20 ft drop to the street below?\n"
+                      "\n")
+                choice = input(">>> ")
+#need to fix
+                if choice in answer_A:
+                    print("You stop and stand your ground!\n")
+                    time.sleep(2)
+                    print("The fulger stops and says 'You're a\n"
+                          "brave one. There's not many that would\n"
+                          "challenge me. I known as The Storm ruler, Razik\n"
+                          "and you will regret challenging me!")
+                    combat_encounter()
+                    if PLAYER_HEALTH <= 1:
+                        print("Razik is incredibly strong and bests\n"
+                              "you in combat\n"
+                              "\n"
+                              "You are captured")
+                        time.sleep(2)
+                        option_capture()
+                    elif ENEMY_HEALTH <= 1:
+                        print("After a difficult battle you manage to\n"
+                              "beat Razik and escape!")
+                        time.sleep(2)
+                        story_part_3()
+                elif choice in answer_B:
+                    print("You jump to the ground below and manage to\n"
+                          "not break your legs! The soldier hesitates\n"
+                          "and you manage to escape.\n"
+                          "\n")        
+                    story_part_3()
+                else:
+                    print("Please select a valid choice")
+                    choice = input(">>> ")
+
+            elif choice in no:
+                time.sleep(2)
+                print("You can't bring yourself to jump\n"
+                      "You stop running and are quickly taken\n"
+                      "down by the solder! He handcuffs you and\n"
+                      "takes you in.")
+                option_capture()
+
+            else:
+                print(f"Please type {yes} or {no}.\n")
+                choice = input(">>> ")
+#add alley escape
+        elif choice in answer_B:
+            print("")
+        else:
+            print("Please select a valid choice?")
+            choice = input(">>> ")
 
 
 def story_part_3():
+    """
+    function to start the third part of the story.
+    """
     print("part 3")
     choice = input(">>> ")
 
