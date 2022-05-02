@@ -309,7 +309,7 @@ def combat_encounter():
             player_magic_combat()
             time.sleep(2)
         else:
-            print("Please enter a valid input")
+            print("Please enter a valid input\n")
             time.sleep(2)
             combat_encounter()
 
@@ -688,9 +688,13 @@ def option_punch():
     """
     Starts a combat encounter
     """
-    print("You punch that sailor square in his face and knock out his"
-          " last tooth!"
-          " He gets up and charges at you.\n Time to fight!")
+    print("You punch that sailor square in his face and knock out his\n"
+          "last tooth!\n"
+          "\n"
+          "He gets up and charges at you.\n"
+          "\n"
+          "Time to fight!\n"
+          "\n")
     combat_encounter()
     print("\n You drop the sailor but get thrown in the brig for fighting.\n"
           "The next day you are tossed onto the docks\n"
@@ -871,81 +875,81 @@ def option_search():
                       "\n")
 
             choice = input(">>> ")
-
-            if choice in answer_A:
-                print("You hide in a nearby cupboard. The military\n"
-                      "breaksthrough The door and begins seraching \n"
-                      "the house. It doesnt take long before you are\n"
-                      "found. You are bound and taken away\n"
-                      "\n")
-                time.sleep(2)
-                option_capture()
-            elif choice in answer_B:
-                print("You run out the back door! You can hear\n"
-                      "The front door burst open as you flee the\n"
-                      "scene but you manage to escape\n"
-                      "\n")
-                time.sleep(2)
-                option_escape()
-            elif RACE_ONE and choice in answer_C:
-                print("You surround yourself in shadows and become\n"
-                      "completely invisible. You watch as the\n"
-                      "military pour into the house and find\n"
-                      "the body. You take this chance to escape.\n"
-                      "\n")
-                time.sleep(2)
-                option_escape()
-            elif RACE_TWO and choice in answer_C:
-                print("You begin scanning the house with your\n"
-                      "Sensory magic and discover a secret\n"
-                      "passage under the house. You run to\n"
-                      "The basement and escape.\n"
-                      "\n")
-                time.sleep(2)
-                option_escape()
-            elif RACE_THREE and choice in answer_C:
-                print("You Harden your body and smash through\n"
-                      "A wall! it makes a lot of noise and\n"
-                      "military hear and chase you.\n"
-                      "They manage to capture you.\n"
-                      "\n")
-                time.sleep(2)
-                option_capture()
-            elif RACE_FOUR and choice in answer_C:
-                print("You make a wall in front of you.\n"
-                      "The military don't suspect anything\n"
-                      "but you are stuck! Eventually your magic\n"
-                      "runs out and you are discovered and taken\n"
-                      "away.\n"
-                      "\n")
-                time.sleep(2)
-                option_capture()
-            elif RACE_FIVE and choice in answer_C:
-                print("You try to use Soul magic to become\n"
-                      "ethereal but it is a very high level\n"
-                      "form of magic that takes time.\n"
-                      "unfortunatly, you are not fast enough\n"
-                      "and you are taken by the Military.\n"
-                      "\n")
-                time.sleep(2)
-                option_capture()
-            elif RACE_SIX and choice in answer_C:
-                print("You easily teleport a small distance\n"
-                      "Away from the house and escape.\n"
-                      "\n")
-                time.sleep(2)
-                option_escape()
-            elif RACE_SEVEN and choice in answer_C:
-                print("You increase your strength and start\n"
-                      "tearing through the building.\n"
-                      "But you are not able to get through\n"
-                      "the wall before the military captures you.\n"
-                      "\n")
-                time.sleep(2)
-                option_capture()
-            else:
-                print("Please select a vaild choice.")
-                choice = input(">>> ")
+            while True:
+                if choice in answer_A:
+                    print("You hide in a nearby cupboard. The military\n"
+                          "breaksthrough The door and begins seraching \n"
+                          "the house. It doesnt take long before you are\n"
+                          "found. You are bound and taken away\n"
+                          "\n")
+                    time.sleep(2)
+                    option_capture()
+                elif choice in answer_B:
+                    print("You run out the back door! You can hear\n"
+                          "The front door burst open as you flee the\n"
+                          "scene but you manage to escape\n"
+                          "\n")
+                    time.sleep(2)
+                    option_escape()
+                elif RACE_ONE and choice in answer_C:
+                    print("You surround yourself in shadows and become\n"
+                          "completely invisible. You watch as the\n"
+                          "military pour into the house and find\n"
+                          "the body. You take this chance to escape.\n"
+                          "\n")
+                    time.sleep(2)
+                    option_escape()
+                elif RACE_TWO and choice in answer_C:
+                    print("You begin scanning the house with your\n"
+                          "Sensory magic and discover a secret\n"
+                          "passage under the house. You run to\n"
+                          "The basement and escape.\n"
+                          "\n")
+                    time.sleep(2)
+                    option_escape()
+                elif RACE_THREE and choice in answer_C:
+                    print("You Harden your body and smash through\n"
+                          "A wall! it makes a lot of noise and\n"
+                          "military hear and chase you.\n"
+                          "They manage to capture you.\n"
+                          "\n")
+                    time.sleep(2)
+                    option_capture()
+                elif RACE_FOUR and choice in answer_C:
+                    print("You make a wall in front of you.\n"
+                          "The military don't suspect anything\n"
+                          "but you are stuck! Eventually your magic\n"
+                          "runs out and you are discovered and taken\n"
+                          "away.\n"
+                          "\n")
+                    time.sleep(2)
+                    option_capture()
+                elif RACE_FIVE and choice in answer_C:
+                    print("You try to use Soul magic to become\n"
+                          "ethereal but it is a very high level\n"
+                          "form of magic that takes time.\n"
+                          "unfortunatly, you are not fast enough\n"
+                          "and you are taken by the Military.\n"
+                          "\n")
+                    time.sleep(2)
+                    option_capture()
+                elif RACE_SIX and choice in answer_C:
+                    print("You easily teleport a small distance\n"
+                          "Away from the house and escape.\n"
+                          "\n")
+                    time.sleep(2)
+                    option_escape()
+                elif RACE_SEVEN and choice in answer_C:
+                    print("You increase your strength and start\n"
+                          "tearing through the building.\n"
+                          "But you are not able to get through\n"
+                          "the wall before the military captures you.\n"
+                          "\n")
+                    time.sleep(2)
+                    option_capture()
+                else:
+                    print("Please select a vaild choice.")
+                    choice = input(">>> ")
         else:
             print(f"Please type {yes} or {no}.\n")
             choice = input(">>> ")
@@ -1142,73 +1146,7 @@ def option_capture():
                   "B: Tell her you're nobody?\n"
                   "C: Spit in her face?")
             choice = input(">>> ")
-            if choice in answer_A:
-                print(f"You tell her your name is {character_name}\n"
-                      "and that you were just here visiting your\n"
-                      "friend.\n"
-                      "\n")
-                time.sleep(2)
-                print("The woman then asks 'So say I were to\n"
-                      "release you, what would you do next?\n"
-                      "\n"
-                      "A: Find the Slayer?\n"
-                      "B: Go home, you've had enough of this place?")
-                choice = input(">>> ")
-
-                if choice in answer_A:
-                    print("You tell her you are going to find the\n"
-                          "Slayer and make him pay for killing\n"
-                          "your friend!")
-                    time.sleep(2)
-                    print("The woman smiles and says 'Good!\n"
-                          "I was hoping you'd say that. My\n"
-                          "name is Harika and I work for the\n"
-                          "The Council of Strazar. We oversee\n"
-                          "Everything in Potentia. I'm willing\n"
-                          "to let yo go on this little vengance\n"
-                          "quest. Anything that causes the Slayer\n"
-                          "a problem is good for us.")
-                    time.sleep(2)
-                    print("Harika signals a gaurd and he unchains you\n"
-                          "Harika says 'there, you're free to go\n"
-                          "good hunting!\n"
-                          "\n")
-                    story_part_3()
-                elif choice in answer_B:
-                    print("You tell the woman you're sick of this\n"
-                          "city and just want to leave. The woman\n"
-                          "says 'How disappointing. But we can't have\n"
-                          "word of the Slayer getting out. I'm afraid\n"
-                          "you'll have to stay here.\n"
-                          "\n")
-                    time.sleep(2)
-                    print("You're taken to a cell and left to rot\n")
-                    time.sleep(2)
-                    print("You died!")
-                    time.sleep(2)
-                    start_menu()
-                else:
-                    print("Please select a valid choice\n")
-                    choice = input(">>> ")
-
-            elif choice in answer_B:
-                print("You tell her you're nobody and was just\n"
-                      "in the wrong place at the wrong time\n"
-                      "\n")
-                time.sleep(2)
-                print("The woman stands and pulls a knife from her\n"
-                      "hip and slowly stabs it into your hand.\n"
-                      "\n"
-                      "The knife digs into your hand!")
-                PLAYER_HEALTH = 8
-                print(f"You have {PLAYER_HEALTH} hit points left\n"
-                      "\n"
-                      "The woman asks again. Who are you?\n"
-                      "\n"
-                      "A: Tell her who you are?\n"
-                      "B: Spit in her face?")
-                choice = input(">>> ")
-
+            while True:
                 if choice in answer_A:
                     print(f"You tell her your name is {character_name}\n"
                           "and that you were just here visiting your\n"
@@ -1221,44 +1159,128 @@ def option_capture():
                           "A: Find the Slayer?\n"
                           "B: Go home, you've had enough of this place?")
                     choice = input(">>> ")
-                    if choice in answer_A:
-                        print("You tell her you are going to find the\n"
-                              "Slayer and make him pay for killing\n"
-                              "your friend!\n"
-                              "\n")
-                        time.sleep(2)
-                        print("The woman smiles and says 'Good!\n"
-                              "I was hoping you'd say that. My\n"
-                              "name is Harika and I work for the\n"
-                              "The Council of Strazar. We oversee\n"
-                              "Everything in Potentia. I'm willing\n"
-                              "to let yo go on this little vengance\n"
-                              "quest. Anything that causes the Slayer\n"
-                              "a problem is good for us.")
-                        time.sleep(2)
-                        print("Harika signals a gaurd and he unchains you\n"
-                              "Harika says 'there, you're free to go\n"
-                              "good hunting!\n"
-                              "\n")
-                        story_part_3()
-                    elif choice in answer_B:
-                        print("You tell the woman you're sick of this\n"
-                              "city and just want to leave. The woman\n"
-                              "says 'How disappointing. But we can't have\n"
-                              "word of the Slayer getting out. I'm afraid\n"
-                              "you'll have to stay here.\n"
-                              "\n")
-                        time.sleep(2)
-                        print("You're taken to a cell and left to rot\n")
-                        time.sleep(2)
-                        print("You died!")
-                        time.sleep(2)
-                        start_menu()
-                    else:
-                        print("Please select a valid choice\n")
-                        choice = input(">>> ")
+
+                    while True:
+
+                        if choice in answer_A:
+                            print("You tell her you are going to find the\n"
+                                  "Slayer and make him pay for killing\n"
+                                  "your friend!")
+                            time.sleep(2)
+                            print("The woman smiles and says 'Good!\n"
+                                  "I was hoping you'd say that. My\n"
+                                  "name is Harika and I work for the\n"
+                                  "The Council of Strazar. We oversee\n"
+                                  "Everything in Potentia. I'm willing\n"
+                                  "to let yo go on this little vengance\n"
+                                  "quest. Anything that causes the Slayer\n"
+                                  "a problem is good for us.")
+                            time.sleep(2)
+                            print("Harika signals a gaurd and he unchains you\n"
+                                  "Harika says 'there, you're free to go\n"
+                                  "good hunting!\n"
+                                  "\n")
+                            story_part_3()
+                        elif choice in answer_B:
+                            print("You tell the woman you're sick of this\n"
+                                  "city and just want to leave. The woman\n"
+                                  "says 'How disappointing. But we can't have\n"
+                                  "word of the Slayer getting out. I'm afraid\n"
+                                  "you'll have to stay here.\n"
+                                  "\n")
+                            time.sleep(2)
+                            print("You're taken to a cell and left to rot\n")
+                            time.sleep(2)
+                            print("You died!")
+                            time.sleep(2)
+                            start_menu()
+                        else:
+                            print("Please select a valid choice\n")
+                            choice = input(">>> ")
 
                 elif choice in answer_B:
+                    print("You tell her you're nobody and was just\n"
+                          "in the wrong place at the wrong time\n"
+                          "\n")
+                    time.sleep(2)
+                    print("The woman stands and pulls a knife from her\n"
+                          "hip and slowly stabs it into your hand.\n"
+                          "\n"
+                          "The knife digs into your hand!")
+                    PLAYER_HEALTH = 8
+                    print(f"You have {PLAYER_HEALTH} hit points left\n"
+                          "\n"
+                          "The woman asks again. Who are you?\n"
+                          "\n"
+                          "A: Tell her who you are?\n"
+                          "B: Spit in her face?")
+                    choice = input(">>> ")
+
+                    while True:
+                        if choice in answer_A:
+                            print(f"You tell her your name is {character_name}\n"
+                                  "and that you were just here visiting your\n"
+                                  "friend.\n"
+                                  "\n")
+                            time.sleep(2)
+                            print("The woman then asks 'So say I were to\n"
+                                  "release you, what would you do next?\n"
+                                  "\n"
+                                  "A: Find the Slayer?\n"
+                                  "B: Go home, you've had enough of this place?")
+                            choice = input(">>> ")
+                            while True:
+                                if choice in answer_A:
+                                    print("You tell her you are going to find the\n"
+                                          "Slayer and make him pay for killing\n"
+                                          "your friend!\n"
+                                          "\n")
+                                    time.sleep(2)
+                                    print("The woman smiles and says 'Good!\n"
+                                          "I was hoping you'd say that. My\n"
+                                          "name is Harika and I work for the\n"
+                                          "The Council of Strazar. We oversee\n"
+                                          "Everything in Potentia. I'm willing\n"
+                                          "to let yo go on this little vengance\n"
+                                          "quest. Anything that causes the Slayer\n"
+                                          "a problem is good for us.")
+                                    time.sleep(2)
+                                    print("Harika signals a gaurd and he unchains you\n"
+                                          "Harika says 'there, you're free to go\n"
+                                          "good hunting!\n"
+                                          "\n")
+                                    story_part_3()
+                                elif choice in answer_B:
+                                    print("You tell the woman you're sick of this\n"
+                                          "city and just want to leave. The woman\n"
+                                          "says 'How disappointing. But we can't have\n"
+                                          "word of the Slayer getting out. I'm afraid\n"
+                                          "you'll have to stay here.\n"
+                                          "\n")
+                                    time.sleep(2)
+                                    print("You're taken to a cell and left to rot\n")
+                                    time.sleep(2)
+                                    print("You died!")
+                                    time.sleep(2)
+                                    start_menu()
+                                else:
+                                    print("Please select a valid choice\n")
+                                    choice = input(">>> ")
+
+                        elif choice in answer_B:
+                            print("You spit in her face!\n"
+                                  "The woman pulls a knife from her hip and\n"
+                                  "stabs you in the throat!!!\n")
+                            time.sleep(2)
+                            print("You died!\n"
+                                  "\n")
+                            PLAYER_HEALTH = 10
+                            start_menu()
+                        else:
+                            print("Please select a valid choice?\n")
+                            choice = input(">>> ")
+
+                elif choice in answer_C:
                     print("You spit in her face!\n"
                           "The woman pulls a knife from her hip and\n"
                           "stabs you in the throat!!!\n")
@@ -1270,19 +1292,6 @@ def option_capture():
                 else:
                     print("Please select a valid choice?\n")
                     choice = input(">>> ")
-
-            elif choice in answer_C:
-                print("You spit in her face!\n"
-                      "The woman pulls a knife from her hip and\n"
-                      "stabs you in the throat!!!\n")
-                time.sleep(2)
-                print("You died!\n"
-                      "\n")
-                PLAYER_HEALTH = 10
-                start_menu()
-            else:
-                print("Please select a valid choice?\n")
-                choice = input(">>> ")
 
         elif choice in answer_B:
             print("You refuse to answer any questions.\n"
@@ -1299,67 +1308,70 @@ def option_capture():
                   "B: Spit in her face?")
 
             choice = input(">>> ")
+            while True:
 
-            if choice in answer_A:
-                print(f"You tell her your name is {character_name}\n"
-                      "and that you were just here visiting your\n"
-                      "friend.\n"
-                      "\n")
-                time.sleep(2)
-                print("The woman then asks 'So say I were to\n"
-                      "release you, what would you do next?\n"
-                      "\n"
-                      "A: Find the Slayer?\n"
-                      "B: Go home, you've had enough of this place?")
-                choice = input(">>> ")
                 if choice in answer_A:
-                    print("You tell her you are going to find the\n"
-                          "Slayer and make him pay for killing\n"
-                          "your friend!\n"
+                    print(f"You tell her your name is {character_name}\n"
+                          "and that you were just here visiting your\n"
+                          "friend.\n"
                           "\n")
                     time.sleep(2)
-                    print("The woman smiles and says 'Good!\n"
-                          "I was hoping you'd say that. My\n"
-                          "name is Harika and I work for the\n"
-                          "The Council of Strazar. We oversee\n"
-                          "Everything in Potentia. I'm willing\n"
-                          "to let yo go on this little vengance\n"
-                          "quest. Anything that causes the Slayer\n"
-                          "a problem is good for us.")
-                    time.sleep(2)
-                    print("Harika signals a gaurd and he unchains you\n"
-                          "Harika says 'there, you're free to go\n"
-                          "good hunting!")
-                    story_part_3()
-                elif choice in answer_B:
-                    print("You tell the woman you're sick of this\n"
-                          "city and just want to leave. The woman\n"
-                          "says 'How disappointing. But we can't have\n"
-                          "word of the Slayer getting out. I'm afraid\n"
-                          "you'll have to stay here.\n"
-                          "\n")
-                    time.sleep(2)
-                    print("You're taken to a cell and left to rot\n")
-                    time.sleep(2)
-                    print("You died!")
-                    time.sleep(2)
-                    start_menu()
-                else:
-                    print("Please select a valid choice\n")
+                    print("The woman then asks 'So say I were to\n"
+                          "release you, what would you do next?\n"
+                          "\n"
+                          "A: Find the Slayer?\n"
+                          "B: Go home, you've had enough of this place?")
                     choice = input(">>> ")
 
-            elif choice in answer_B:
-                print("You spit in her face!\n"
-                      "The woman pulls a knife from her hip and\n"
-                      "stabs you in the throat!!!\n")
-                time.sleep(2)
-                print("You died!\n"
-                      "\n")
-                PLAYER_HEALTH = 10
-                start_menu()
-            else:
-                print("Please select a valid choice?\n")
-                choice = input(">>> ")
+                    while True:
+                        if choice in answer_A:
+                            print("You tell her you are going to find the\n"
+                                  "Slayer and make him pay for killing\n"
+                                  "your friend!\n"
+                                  "\n")
+                            time.sleep(2)
+                            print("The woman smiles and says 'Good!\n"
+                                  "I was hoping you'd say that. My\n"
+                                  "name is Harika and I work for the\n"
+                                  "The Council of Strazar. We oversee\n"
+                                  "Everything in Potentia. I'm willing\n"
+                                  "to let yo go on this little vengance\n"
+                                  "quest. Anything that causes the Slayer\n"
+                                  "a problem is good for us.")
+                            time.sleep(2)
+                            print("Harika signals a gaurd and he unchains you\n"
+                                  "Harika says 'there, you're free to go\n"
+                                  "good hunting!")
+                            story_part_3()
+                        elif choice in answer_B:
+                            print("You tell the woman you're sick of this\n"
+                                  "city and just want to leave. The woman\n"
+                                  "says 'How disappointing. But we can't have\n"
+                                  "word of the Slayer getting out. I'm afraid\n"
+                                  "you'll have to stay here.\n"
+                                 "\n")
+                            time.sleep(2)
+                            print("You're taken to a cell and left to rot\n")
+                            time.sleep(2)
+                            print("You died!")
+                            time.sleep(2)
+                            start_menu()
+                        else:
+                            print("Please select a valid choice\n")
+                            choice = input(">>> ")
+
+                elif choice in answer_B:
+                    print("You spit in her face!\n"
+                          "The woman pulls a knife from her hip and\n"
+                          "stabs you in the throat!!!\n")
+                    time.sleep(2)
+                    print("You died!\n"
+                          "\n")
+                    PLAYER_HEALTH = 10
+                    start_menu()
+                else:
+                    print("Please select a valid choice?\n")
+                    choice = input(">>> ")
 
         elif choice in answer_C:
             print("You spit in her face!"
@@ -1404,66 +1416,67 @@ def option_escape():
                   "No:\n"
                   "\n")
             choice = input(">>> ")
-
-            if choice in yes:
-                time.sleep(2)
-                print("You jump the gap! You land on the other\n"
-                      "side and continue running")
-                time.sleep(2)
-                print("The soldier chasing you leaps the gap!"
-                      "You get a good look at him. He is a\n"
-                      "Fulger with a look of determination in\n"
-                      "his eyes!\n"
-                      "\n"
-                      "He starts casting bolts of lightning at you\n"
-                      "What do you do?\n"
-                      "A: Stop and fight the soldier?\n"
-                      "B: Jump the 20 ft drop to the street below?\n"
-                      "\n")
-                choice = input(">>> ")
-#need to fix
-                if choice in answer_A:
-                    print("You stop and stand your ground!\n")
+            while True:
+                if choice in yes:
                     time.sleep(2)
-                    print("The fulger stops and says 'You're a\n"
-                          "brave one. There's not many that would\n"
-                          "challenge me. I known as The Storm ruler, Razik\n"
-                          "and you will regret challenging me!")
-                    combat_encounter()
-                    if PLAYER_HEALTH <= 1:
-                        print("Razik is incredibly strong and bests\n"
-                              "you in combat\n"
-                              "\n"
-                              "You are captured")
-                        time.sleep(2)
-                        option_capture()
-                    elif ENEMY_HEALTH <= 1:
-                        print("After a difficult battle you manage to\n"
-                              "beat Razik and escape!")
-                        time.sleep(2)
-                        story_part_3()
-                elif choice in answer_B:
-                    print("You jump to the ground below and manage to\n"
-                          "not break your legs! The soldier hesitates\n"
-                          "and you manage to escape.\n"
-                          "\n")        
-                    story_part_3()
+                    print("You jump the gap! You land on the other\n"
+                          "side and continue running")
+                    time.sleep(2)
+                    print("The soldier chasing you leaps the gap!"
+                          "You get a good look at him. He is a\n"
+                          "Fulger with a look of determination in\n"
+                          "his eyes!\n"
+                          "\n"
+                          "He starts casting bolts of lightning at you\n"
+                          "What do you do?\n"
+                          "A: Stop and fight the soldier?\n"
+                          "B: Jump the 20 ft drop to the street below?\n"
+                          "\n")
+                    choice = input(">>> ")
+                    while True:
+
+                        if choice in answer_A:
+                            print("You stop and stand your ground!\n")
+                            time.sleep(2)
+                            print("The fulger stops and says 'You're a\n"
+                                  "brave one. There's not many that would\n"
+                                  "challenge me. I known as The Storm ruler, Razik\n"
+                                  "and you will regret challenging me!")
+                            combat_encounter()
+                        if PLAYER_HEALTH <= 1:
+                            print("Razik is incredibly strong and bests\n"
+                                  "you in combat\n"
+                                  "\n"
+                                  "You are captured")
+                            time.sleep(2)
+                            option_capture()
+                        elif ENEMY_HEALTH <= 1:
+                            print("After a difficult battle you manage to\n"
+                                  "beat Razik and escape!")
+                            time.sleep(2)
+                            story_part_3()
+                        elif choice in answer_B:
+                            print("You jump to the ground below and manage to\n"
+                                  "not break your legs! The soldier hesitates\n"
+                                  "and you manage to escape.\n"
+                                  "\n")
+                            story_part_3()
+                        else:
+                            print("Please select a valid choice")
+                            choice = input(">>> ")
+
+                elif choice in no:
+                    time.sleep(2)
+                    print("You can't bring yourself to jump\n"
+                          "You stop running and are quickly taken\n"
+                          "down by the solder! He handcuffs you and\n"
+                          "takes you in.")
+                    option_capture()
+
                 else:
-                    print("Please select a valid choice")
+                    print(f"Please type {yes} or {no}.\n")
                     choice = input(">>> ")
 
-            elif choice in no:
-                time.sleep(2)
-                print("You can't bring yourself to jump\n"
-                      "You stop running and are quickly taken\n"
-                      "down by the solder! He handcuffs you and\n"
-                      "takes you in.")
-                option_capture()
-
-            else:
-                print(f"Please type {yes} or {no}.\n")
-                choice = input(">>> ")
-#add alley escape
         elif choice in answer_B:
             print("")
         else:
