@@ -13,6 +13,13 @@ class Enemy:
 ENEMY_1 = ("Sailor")
 ENEMY_2 = ("Slayer")
 
+PASSWORD = ["Nadaren",
+            "nadaren",
+            "NADAREN",
+            "Nadaren.",
+            "nadaren.",
+            "NADAREN."
+            ]
 
 # Figuring out how users might respond
 answer_A = ["A", "a"]
@@ -410,10 +417,21 @@ def start_menu():
     reset_race()
 
     print("Welcome to Potentia text adventure!\n"
+          "\n"
+          "Potentia is a static world built on magic.\n"
+          "Magic makes the world move and change.\n"
+          "Even the sun (known as the Vatra) is made\n"
+          "everyday by 200 casters channeling magic.\n"
+          "to produce a ball of fire to light the world.\n"
+          "Without it the world would be dark!\n"
+          "\n"
+          "In this game\n"
           "You will be given choices or a yes or no question\n"
           "Your choice will change the story as it plays.\n"
           "You will be given a choice of race which will\n"
-          "change certian aspects of the game.\n Have fun!!!\n"
+          "change certian aspects of the game.\n"
+          "\n"
+          "Have fun!!!\n"
           "\n")
     race = input("choose your race...\n"
                  "A Vahser\n"
@@ -876,7 +894,7 @@ def option_search():
     """
     global character_name
     print("You begin frantically searching the room, looking for anything!\n")
-    print(f"You find a sealed letter with '{character_name}' written on it"
+    print(f"You find a sealed letter with '{character_name}' written on it\n"
           "\n")
     print(f"The letter reads 'Dear, {character_name}.\n"
           "\n"
@@ -886,6 +904,10 @@ def option_search():
           "body liberation. \n"
           "I know we didn't see each other as often as we should but you\n"
           "were my best friend in my lonely life.\n"
+          "\n"
+          "please leave Jatorri and never look back... But\n"
+          "if you wish to avenge me then go to the place\n"
+          "where light is born.\n"
           "\n")
     print(f"Thank you, {character_name}.")
     time.sleep(2)
@@ -1041,7 +1063,9 @@ def read_bloody_note():
           "ANY WHO WORK FOR OR UNDER THE COUNCIL\n"
           "SHALL FALL VICTIM TO THE JATORRI CITY\n"
           "SLAYER! NO ONE AND NOTHING CAN STOP ME!\n"
-          "\n")
+          "\n"
+          "IF YOU WISH TO STOP ME YOU'RE WELCOME TO\n"
+          "TRY. YOU WILL FIND ME WHERE LIGHT IS BORN.")
     time.sleep(2)
     print("As you finish reading the note you hear\n"
           "a commotion from outside!\n"
@@ -1254,7 +1278,16 @@ def option_capture():
                             print("Harika signals a gaurd\n"
                                   "and he unchains you\n"
                                   "Harika says 'there, you're free to go\n"
-                                  "good hunting!\n"
+                                  "\n"
+                                  "Some advise, the slayer often leaves a\n"
+                                  "a calling card which goads the reader\n"
+                                  "into going to the place where\n"
+                                  "light is born.\n"
+                                  "\n"
+                                  "Any idiot could tell you that, that would\n"
+                                  "be the Vatra tower but we've searched and\n"
+                                  "found nothing. I trust you'll have more\n"
+                                  "luck. Good hunting!\n"
                                   "\n")
                             story_part_3()
                         elif choice in answer_B:
@@ -1618,9 +1651,57 @@ def story_part_3():
     """
     function to start the third part of the story.
     """
-    print("part 3")
+    print("Now that you're not being persued you\n"
+          "can begin your search for the Slayer.\n"
+          "\n"
+          "You begin your search by heading to\n"
+          "Vatra tower. You search the tower for\n"
+          "hours but find nothing.\n"
+          "\n")
+    time.sleep(2)
+    print("Suddenly you feel a pull towards a door\n"
+          "in the tower. You go towards the door and\n"
+          "can't stop yourself from reaching out.\n"
+          "You touch the door and symbols begin to\n"
+          "circle around you. The symbols are a\n"
+          "series of numbers and letters which read\n"
+          "\n"
+          "14 = N\n"
+          "N - 13\n"
+          "N - 10\n"
+          "D - 3\n"
+          "A + N + 3\n"
+          "D + A\n"
+          "R - D\n"
+          "\n")
+    print("You hear a voice in your head that\n"
+          "you speak the words it wants to hear.\n"
+          "\n"
+          "What do you say to the door?\n")
 
     choice = input(">>> ")
+    while True:
+        if choice in PASSWORD:
+            print("\n"
+                  "You say the word 'Nadaren' and\n"
+                  "the door begins to distort and you\n"
+                  "are sucked through a dimensional\n"
+                  "space.")
+            time.sleep(2)
+            print("You find yourself in a large chamber\n"
+                  "\n"
+                  "There is a masked person standing in the\n"
+                  "room with you who says\n" 
+                  f"'Welcome {character_name}. you have no idea\n"
+                  "how long i've been waiting for you")
+            story_part_4()
+        else:
+            print("Please type the correct word.")
+            choice = input(">>> ")
 
+
+def story_part_4():
+    print("story part 4")
+    choice = input(">>> ")
 
 start_menu()
