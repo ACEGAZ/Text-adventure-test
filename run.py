@@ -1,6 +1,19 @@
 import time
 import random
 
+
+class Enemy:
+    """
+    class for all enemies
+    """
+    def __init__(self, name):
+        self.name = name
+
+
+ENEMY_1 = ("Sailor")
+ENEMY_2 = ("Slayer")
+
+
 # Figuring out how users might respond
 answer_A = ["A", "a"]
 answer_B = ["B", "b"]
@@ -30,7 +43,7 @@ MAGIK_DAMAGE = 3
 
 def reset_race():
     """
-    resets race to false
+    resets race to false and used when game is restarted
     """
     global RACE_ONE
     RACE_ONE = False
@@ -624,12 +637,12 @@ def story_part_1():
     time.sleep(1)
 
     print("You wake up on a ship, sailing towards the Human city of Jatorri\n"
-          "A friend of yours named Teslora lives there"
-          " and you are going to visit her."
-          " Suddenly, a drunken human sailor approches\n" 
-          "you and says 'Hello,"
-          " Mate. I need a drink and you've got that hip flask."
-          " give it er'\n"
+          "A friend of yours named Teslora lives there\n"
+          "and you are going to visit her.\n"
+          "Suddenly, a drunken human\n"
+          "approches you and says 'Hello,\n"
+          "Mate. I need a drink and you've got that hip flask.\n"
+          "give it er!'\n"
           "\n"
           "what will you do?\n"
           "\n"
@@ -1413,17 +1426,17 @@ def option_capture():
                                   "quest. Anything that causes the Slayer\n"
                                   "a problem is good for us.")
                             time.sleep(2)
-                            print("Harika signals a gaurd and he unchains you\n"
-                                  "Harika says 'there, you're free to go\n"
-                                  "good hunting!")
+                            print("Harika signals a gaurd and he unchains\n"
+                                  "you. Harika says 'there, you're \n"
+                                  "free to go, good hunting!")
                             story_part_3()
                         elif choice in answer_B:
                             print("You tell the woman you're sick of this\n"
                                   "city and just want to leave. The woman\n"
-                                  "says 'How disappointing. But we can't have\n"
-                                  "word of the Slayer getting out. I'm afraid\n"
-                                  "you'll have to stay here.\n"
-                                 "\n")
+                                  "says 'How disappointing. But we can't\n"
+                                  "have word of the Slayer getting out.\n"
+                                  "I'm afraid you'll have to stay here.\n"
+                                  "\n")
                             time.sleep(2)
                             print("You're taken to a cell and left to rot\n")
                             time.sleep(2)
@@ -1535,7 +1548,67 @@ def option_escape():
                     choice = input(">>> ")
 
         elif choice in answer_B:
-            print("")
+            print("You head into the back alleys.\n"
+                  "They twist and turn. Eventually\n"
+                  "you come to a fork.\n"
+                  "What do you do?\n"
+                  "\n"
+                  "A: Go left?\n"
+                  "B: Go right?\n"
+                  "\n")
+            choice = input(">>> ")
+            while True:
+                if choice in answer_A:
+                    print("You take the left path.\n"
+                          "The path leads to a dead\n"
+                          "end. Gaurds quickly find\n"
+                          "you and take you down!\n"
+                          "\n")
+                    option_capture()
+                elif choice in answer_B:
+                    print("You take the right path.\n"
+                          "The alley comes to an end\n"
+                          "and you come out at a small\n"
+                          "square that leads to a\n"
+                          "suspension bridge.\n"
+                          "\n"
+                          "You run across the bridge.\n"
+                          "You get half way across before\n"
+                          "you notice that some guards have\n"
+                          "followed you!\n"
+                          "\n"
+                          "What do you do?\n"
+                          "A: Shake the bridge?\n"
+                          "B: Carry on running?\n"
+                          "\n")
+                    choice = input(">>> ")
+                    while True:
+                        if choice in answer_A:
+                            print("You shake the bridge from left\n"
+                                  "to right! The gaurds have\n"
+                                  "trouble hanging on and fall\n"
+                                  "over the sides! you take this\n"
+                                  "chance and manage to escape\n"
+                                  "completely.\n"
+                                  "\n")
+                            story_part_3()
+                        elif choice in answer_B:
+                            print("You carry on run but it is\n"
+                                  "difficult to get your footing\n"
+                                  "now that so many people are on\n"
+                                  "the bridge\n"
+                                  "\n"
+                                  "The gaurds eventually manage to catch\n"
+                                  "you and you are taken in.\n"
+                                  "\n")
+                            option_capture()
+                        else:
+                            print("Please select a valid choice")
+                        choice = input(">>> ")
+
+                else:
+                    print("Please select a valid choice")
+                    choice = input(">>> ")
         else:
             print("Please select a valid choice?")
             choice = input(">>> ")
@@ -1546,6 +1619,7 @@ def story_part_3():
     function to start the third part of the story.
     """
     print("part 3")
+
     choice = input(">>> ")
 
 
