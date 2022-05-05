@@ -10,8 +10,8 @@ class Enemy:
         self.name = name
 
 
-ENEMY_1 = ("Sailor")
-ENEMY_2 = ("Slayer")
+ENEMY_1 = False
+ENEMY_2 = False
 
 PASSWORD = ["Nadaren",
             "nadaren",
@@ -114,7 +114,11 @@ def player_melee_combat():
     player melee combat engine for game
     """
     if RACE_ONE:
-        if player_attack_roll() >= 4:
+        if player_attack_roll() >= 4 and ENEMY_1:
+            reduce_enemy_health_melee()
+            print("You attack with your daggers and hit!"
+                  f" Enemy has {ENEMY_HEALTH} hit points left""\n")
+        elif player_attack_roll() >= 4 and ENEMY_2:
             reduce_enemy_health_melee()
             print("You attack with your daggers and hit!"
                   f" Enemy has {ENEMY_HEALTH} hit points left""\n")
@@ -434,13 +438,13 @@ def start_menu():
           "Have fun!!!\n"
           "\n")
     race = input("choose your race...\n"
-                 "A Vahser\n"
-                 "B Mortem\n"
-                 "C Bascula\n"
-                 "D Hemmel\n"
-                 "E Human\n"
-                 "F Arratoi\n"
-                 "G Fulger\n"
+                 "A: Vahser\n"
+                 "B: Mortem\n"
+                 "C: Bascula\n"
+                 "D: Hemmel\n"
+                 "E: Human\n"
+                 "F: Arratoi\n"
+                 "G: Fulger\n"
                  "\n"
                  ">>>"
                  )
@@ -665,7 +669,7 @@ def story_part_1():
           "what will you do?\n"
           "\n"
           "A: Punch him in his gap toothed face?\n"
-          "B: Share your flask with him.?\n"
+          "B: Share your flask with him?\n"
           "C: Tell him the flask is full of water?\n"
           "D: Special Race options\n")
     if RACE_ONE:
@@ -767,7 +771,7 @@ def story_part_1():
                   "You stare at the sailor and let out a guttural growl.\n"
                   "The sailor leaves without saying another word.\n"
                   "\n"
-                  "You arrive at the docks and walk towards your\n" 
+                  "You arrive at the docks and walk towards your\n"
                   "friends house.\n")
             time.sleep(2)
             story_part_2()
@@ -1338,7 +1342,7 @@ def option_capture():
                                   "release you, what would you do next?\n"
                                   "\n"
                                   "A: Find the Slayer?\n"
-                                  "B: Go home.\n" 
+                                  "B: Go home.\n"
                                   "You've had enough of this place?\n")
                             choice = input(">>> ")
                             while True:
@@ -1675,7 +1679,8 @@ def story_part_3():
           "R - D\n"
           "\n")
     print("You hear a voice in your head that\n"
-          "you speak the words it wants to hear.\n"
+          "tells you to speak the\n"
+          "word it wants to hear.\n"
           "\n"
           "What do you say to the door?\n")
 
@@ -1691,17 +1696,97 @@ def story_part_3():
             print("You find yourself in a large chamber\n"
                   "\n"
                   "There is a masked person standing in the\n"
-                  "room with you who says\n" 
+                  "room with you who says\n"
                   f"'Welcome {character_name}. you have no idea\n"
-                  "how long i've been waiting for you")
-            story_part_4()
+                  "how long i've been waiting for you.\n"
+                  "There's something special about you\n"
+                  f"{character_name}. Only a master in\n"
+                  "the art of magic can get to this place\n"
+                  "... a master or a Nadaren! You, you\n"
+                  "possess an incredible power! The power\n"
+                  "to level an entire continent!\n"
+                  "But your power is not been yet realised.\n"
+                  "\n"
+                  f"So, will you join me {character_name}?'\n"
+                  "\n"
+                  "Yes:\n"
+                  "No:\n")
+            choice = input(">>> ")
+            while True:
+                if choice in yes:
+                    print("You accept the masked strangers offer\n"
+                          "\n"
+                          "The stranger pulls takes off thier mask\n"
+                          "to reveal the face of your friend, Teslora\n"
+                          "She says 'I'm sorry for the deceit,\n"
+                          f"{character_name} but I had to fake my\n"
+                          "death to throw off the council. I used\n"
+                          "the body of the last council member I\n"
+                          "killed and used Soul magic to change thier\n"
+                          "appearance to look like me.\n"
+                          "\n"
+                          "The council would have killed\n"
+                          "you if they knew what\n"
+                          "you were. I acted as the Slayer to take\n"
+                          "down council members and draw you too me\n"
+                          "\n"
+                          "Now, together we can destroy the rulers of\n"
+                          "this world!\n"
+                          "\n")
+                    end()
+                elif choice in no:
+                    print("You refuse the strangers offer.\n"
+                          "\n"
+                          "They look at you and say 'Well, if\n"
+                          "you're not with me then you're against\n"
+                          "me! and the Slayer can't have you falling\n"
+                          "into the Councils hands!\n"
+                          "\n"
+                          "The Slayer runs at you to attack!!!\n"
+                          "\n")
+                    combat_encounter()
+                    print("You defeat the Slayer. The Slayer lies\n"
+                          "on the ground in a pool of blood.\n"
+                          "You walk up to the lifeless body and\n"
+                          "take off the Slayers mask to reveal\n"
+                          "the face of Teslora. You struggle to\n"
+                          "understand how she can be alive but\n"
+                          "you will now never have the answers\n"
+                          "\n"
+                          "You leave your friend and leave to disover\n"
+                          "what a Nadaren is.")
+                    end()
+                else:
+                    print(f"Please type {yes} or {no}.\n")
+                    choice = input(">>> ")
         else:
             print("Please type the correct word.")
             choice = input(">>> ")
 
 
-def story_part_4():
-    print("story part 4")
-    choice = input(">>> ")
+def end():
+    """
+    function for end game credits and to restart the game.
+    """
+    print("congratulations on reaching the end!\n"
+          "\n"
+          "I hope you enjoyed my game!\n"
+          "\n"
+          "This game was written and coded by\n"
+          "Gary Lowles.\n"
+          "\n"
+          "The game was tested by:\n"
+          "Rachel Lowles\n"
+          "Charlotte Aling-Case\n"
+          "lysette Reed\n"
+          "Aaron Harvey\n"
+          "Dale Millward\n"
+          "Natalie March\n"
+          "Emma Skinner\n"
+          "\n"
+          "Thanks for playing.\n"
+          "\n")
+    start_menu()
+
 
 start_menu()
