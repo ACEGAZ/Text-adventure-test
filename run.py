@@ -116,8 +116,10 @@ def player_melee_combat():
     if RACE_ONE:
         if player_attack_roll() >= 4:
             reduce_enemy_health_melee()
-            print("You attack the " + enemy.name + " with your daggers and hit!\n"
-                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit points left.\n")
+            print("You attack the " + enemy.name + " with your daggers\n"
+                  "and hit!\n"
+                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit\n" 
+                  "points left.\n")
         else:
             print("You missed\n")
 
@@ -125,7 +127,8 @@ def player_melee_combat():
         if player_attack_roll() >= 4:
             reduce_enemy_health_melee()
             print(" You swing with your scythe and hit the " + enemy.name +
-                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit points left.\n")
+                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit\n"
+                  "points left.\n")
         else:
             print("You missed\n")
 
@@ -133,15 +136,18 @@ def player_melee_combat():
         if player_attack_roll() >= 4:
             reduce_enemy_health_melee()
             print(" You crash down your Vasara and hit the " + enemy.name +
-                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit points left.\n")
+                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit\n"
+                  "points left.\n")
         else:
             print("You missed\n")
 
     elif RACE_FOUR:
         if player_attack_roll() >= 4:
             reduce_enemy_health_melee()
-            print("You levitate and slash with floating swords and hit the" + enemy.name +
-                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit points left.\n")
+            print("You levitate and slash with floating\n"
+                  "swords and hit the " + enemy.name +
+                  " The " + enemy.name + f" has {ENEMY_HEALTH} hit\n"
+                  "points left.\n")
         else:
             print("You missed\n")
 
@@ -149,23 +155,28 @@ def player_melee_combat():
         if player_attack_roll() >= 4:
             reduce_enemy_health_melee()
             print("You slash with your sword and hit the " + enemy.name +
-                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit points left.\n")
+                  " The " + enemy.name + f" has {ENEMY_HEALTH} hit\n"
+                  "points left.\n")
         else:
             print("You missed\n")
 
     elif RACE_SIX:
         if player_attack_roll() >= 4:
             reduce_enemy_health_melee()
-            print("You unleash a powerful martial arts strike and hit the " + enemy.name +
-                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit points left.\n")
+            print("You unleash a powerful martial arts strike and hit the\n"
+                  + enemy.name +
+                  " The " + enemy.name + f" has {ENEMY_HEALTH} hit\n"
+                  "points left.\n")
         else:
             print("You missed\n")
 
     elif RACE_SEVEN:
         if player_attack_roll() >= 4:
             reduce_enemy_health_melee()
-            print("You slash with your sharp, metal claws and hit the " + enemy.name +
-                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit points left.\n")
+            print("You slash with your sharp, metal claws and hit the "
+                  + enemy.name +
+                  " The " + enemy.name + f" has {ENEMY_HEALTH} hit\n"
+                  "points left.\n")
         else:
             print("You missed\n")
 
@@ -186,32 +197,40 @@ def player_magic_combat():
     if RACE_ONE:
         if player_magic_roll() >= 5:
             reduce_enemy_health_magic()
-            print("You send a jet of water flying at the " + enemy.name + " and hit!"
-                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit points left.\n")
+            print("You send a jet of water flying at the " + enemy.name +
+                  " and hit!\n"
+                  " The " + enemy.name + f" has {ENEMY_HEALTH} hit\n"
+                  "points left.\n")
         else:
             print("Your Aqua magic misses\n")
 
     elif RACE_TWO:
         if player_magic_roll() >= 5:
             reduce_enemy_health_magic()
-            print("You send shards of ice flying at the " + enemy.name + " and hit!"
-                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit points left.\n")
+            print("You send shards of ice flying at the " + enemy.name +
+                  " and hit!\n"
+                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit\n"
+                  "points left.\n")
         else:
             print("Your Cryo magic misses\n")
 
     elif RACE_THREE:
         if player_magic_roll() >= 5:
             reduce_enemy_health_magic()
-            print("You send a fireball flying at the " + enemy.name + " and hit!"
-                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit points left.\n")
+            print("You send a fireball flying at the " + enemy.name +
+                  " and hit!\n"
+                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit\n"
+                  "points left.\n")
         else:
             print("Your Pyro magic misses\n")
 
     elif RACE_FOUR:
         if player_magic_roll() >= 5:
             reduce_enemy_health_magic()
-            print("You send a blast of wind towards the " + enemy.name + " and hit!"
-                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit points left.\n")
+            print("You send a blast of wind towards the " + enemy.name +
+                  " and hit!\n"
+                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit\n"
+                  " points left.\n")
         else:
             print("Your zephyr magic misses\n")
 
@@ -219,23 +238,28 @@ def player_magic_combat():
         if player_magic_roll() >= 5:
             reduce_enemy_health_magic()
             print("You drain some of the " + enemy.name + "soul!"
-                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit points left.\n")
+                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit\n"
+                  "points left.\n")
         else:
             print("Your Soul magic misses\n")
 
     elif RACE_SIX:
         if player_magic_roll() >= 5:
             reduce_enemy_health_magic()
-            print("You send a chunk of rock flying towards the " + enemy.name + " and hit!"
-                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit points left.\n")
+            print("You send a chunk of rock flying towards the "
+                  + enemy.name + " and hit!\n"
+                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit\n"
+                  "points left.\n")
         else:
             print("Your Terra magic misses\n")
 
     elif RACE_SEVEN:
         if player_magic_roll() >= 5:
             reduce_enemy_health_magic()
-            print("You send a bolt of lightning flying at the " + enemy.name + " and hit!"
-                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit points left.\n")
+            print("You send a bolt of lightning flying at the " + enemy.name +
+                  " and hit!\n"
+                  "The " + enemy.name + f" has {ENEMY_HEALTH} hit\n"
+                  "points left.\n")
         else:
             print("Your Fulgeration magic misses\n")
 
@@ -339,7 +363,7 @@ def combat_encounter():
             enemy_attack_choice_roll()
             enemy_attack_choice()
         elif ENEMY_HEALTH <= 0:
-            print("You defeated the enemy!\n")
+            print("You defeated the " + enemy + "\n")
             time.sleep(2)
             PLAYER_HEALTH = 10
             ENEMY_HEALTH = 8
@@ -850,7 +874,7 @@ def story_part_2():
     function to start the second part of the story
     """
     global enemy
-    enemy = Enemy("Razik")
+    enemy = Enemy("Soldier, Razik")
 
     print("You make your way through Jatorri city. The city is a marvel of\n"
           "Human ingenuity. The city is built into a canyon and supended\n"
@@ -1656,6 +1680,9 @@ def story_part_3():
     """
     function to start the third part of the story.
     """
+    global enemy
+    enemy = Enemy("Slayer")
+
     print("Now that you're not being persued you\n"
           "can begin your search for the Slayer.\n"
           "\n"
